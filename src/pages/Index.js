@@ -78,18 +78,18 @@ function Index() {
       <div className="description" id="about">
         <div>
           {" "}
-          <p className="details">
+          <p className="details mx-4">
             Bringing You The Very First Island Party Experience Here In Ghana.
           </p>
-          <p className="details">
+          <p className="details mx-4">
             The Best Beach And Pool Parties Will Be Happening Right Here On The
             Island As Well
           </p>
-          <p className="details">
+          <p className="details mx-4">
             {" "}
             An Indoor Club Later In The Night. Three Parties In One!
           </p>
-          <p className="details ">
+          <p className="details mx-4 ">
             {" "}
             It’s All About Unlimited And Non Stop Vibes.
           </p>
