@@ -69,3 +69,24 @@ body {
         color: #ec3683;
     }
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    margin: auto;
+    font-family: "Pacifico", cursive;
+    color: white;
+    .secret {
+        font-family: "Pacifico";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 48px;
+        /* or 120% */
+        text-align: center;
+        color: #ffffff;
+    }
+}

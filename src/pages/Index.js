@@ -63,76 +63,15 @@ function Index() {
             </div>
           </div>
         </nav>
-        {/* <nav className="navbar navbar-inverse">
-          <div className="container">
-            <a class="navbar-brand">
-              <img src="./images/logo1.png" alt="navlogo" />
-            </a>
 
-            <div class="hideBtn">
-              <button
-                class="navbar-toggle btn"
-                type="button"
-                data-toggle="collapse"
-                data-target="navContent"
-              >
-                <img src="./images/menu.png" />
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navContent">
-              <ul class="navbar-nav flex-row gap-3 d-none d-xl-flex ">
-                <li class="nav-item">
-                  <a
-                    class="nav-link justify-content-center align-items-center px-1  gap-2"
-                    href="#"
-                  >
-                    <p>About</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link justify-content-center align-items-center px-1  gap-2"
-                    href="#"
-                  >
-                    <p>Tickets</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link justify-content-center align-items-center px-1  gap-2"
-                    href="#"
-                  >
-                    <p>Tables</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link justify-content-center align-items-center px-1  gap-2"
-                    href="#"
-                  >
-                    <p>Shop Dikinis</p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <div class="nav-link justify-content-center align-items-center px-1  gap-2">
-                    {" "}
-                    <button className="navBtn">Grab a ticket</button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> */}
-
-        {/* <div>
+        <div className="content">
           <img src="./images/logo2.png" />
-          <div>
-            <p className="header-text">
-              Whatever Happens On The Island Stays On The Island
-            </p>
-          </div>
-        </div> */}
+
+          <p className="secret">Whatever Happens On The Island</p>
+          <p className="secret">Stays On The Island</p>
+          <p>17th December, 2022</p>
+          <p>The Platinum Bay Hotel</p>
+        </div>
       </div>
     </div>
   );
