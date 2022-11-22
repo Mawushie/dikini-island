@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "mixins";
 body {
     margin: 0;
 }
@@ -7,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url("../../public/images/backgroundlg.png");
+    background-image: linear-gradient( 180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.56) 100%), url("../../public/images/backgroundlg.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -24,5 +26,46 @@ body {
 }
 
 .container {
-    background-color: rebeccapurple;
+    display: flex;
+    gap: 2;
+    li {
+        display: flex;
+        align-items: center;
+    }
+    a {
+        color: white;
+        font-family: "Figtree", sans-serif;
+        font-size: 18px;
+        line-height: 22px;
+        margin-right: 24px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hideBtn {
+        display: none;
+    }
+}
+
+.nav-link {
+    color: black;
+    padding: 5px 20px;
+    &:hover {
+        color: #ec3683;
+    }
+}
+
+.active {
+    color: #ec3683 !important;
+    font-weight: bold;
+    background: white;
+}
+
+.navBtn {
+    @include buttonStyles(transparent,
+    #ec3683,
+    #ec3683);
+    &:hover {
+        color: #ec3683;
+    }
 }
