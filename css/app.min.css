@@ -1,2 +1,2 @@
-body{margin:0}.header{height:500px;display:flex;justify-content:center;align-items:center;background:url("../../../dikini-island/public/assets/backgroundlg.png");background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}@media screen and (min-width: 400px){.header{height:900px}}.header-text{font-family:"Pacifico", cursive;font-size:40px;color:white}
+body{margin:0}.header{height:500px;display:flex;justify-content:center;align-items:center;background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed}@media screen and (min-width: 400px){.header{height:900px}}.header-text{font-family:"Pacifico", cursive;font-size:40px;color:white}
 /*# sourceMappingURL=app.min.css.map */
