@@ -65,7 +65,9 @@ function Index() {
         </nav>
 
         <div className="content">
-          <img src="./images/logo2.png" alt="logo2" id="logo2" />
+          <div id="logo2">
+            <img src="./images/logo2.png" alt="logo2" />
+          </div>
 
           <p className="secret">Whatever Happens On The Island</p>
           <p className="secret">Stays On The Island</p>
