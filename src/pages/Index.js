@@ -30,7 +30,7 @@ function Index() {
             >
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#topics">
+                  <a class="nav-link" href="#about">
                     About
                   </a>
                 </li>
@@ -40,7 +40,7 @@ function Index() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#contact">
+                  <a class="nav-link" href="#tables">
                     Tables{" "}
                   </a>
                 </li>
@@ -72,6 +72,31 @@ function Index() {
           <p>17th December, 2022</p>
           <p>The Platinum Bay Hotel</p>
         </div>
+      </div>
+      <div className="description" id="about">
+        <p className="details">
+          Bringing You The Very First Island Party Experience Here In Ghana.
+        </p>
+        <p className="details">
+          The Best Beach And Pool Parties Will Be Happening Right Here On The
+          Island As Well
+        </p>
+        <p className="details">
+          {" "}
+          An Indoor Club Later In The Night. Three Parties In One!
+        </p>
+        <p className="details"> It’s All About Unlimited And Non Stop Vibes.</p>
+
+        <p className="m-4">
+          See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
+        </p>
+
+        <button className="btnSecondary">Grab a ticket</button>
+      </div>
+
+      <div className="tableSection" id="tables">
+        {" "}
+        Table Section Table Section Table Section Table Section
       </div>
     </div>
   );

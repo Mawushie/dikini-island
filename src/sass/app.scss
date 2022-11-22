@@ -90,3 +90,24 @@ body {
         color: #ffffff;
     }
 }
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 72px 340px;
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 500;
+    color: #525252;
+    .details {
+        margin-bottom: 0px;
+    }
+}
+
+.btnSecondary {
+    @include buttonStyles(#ec3683,
+    #ffffff,
+    transparent);
+}
