@@ -65,7 +65,7 @@ function Index() {
         </nav>
 
         <div className="content">
-          <img src="./images/logo2.png" />
+          <img src="./images/logo2.png" alt="logo2" id="logo2" />
 
           <p className="secret">Whatever Happens On The Island</p>
           <p className="secret">Stays On The Island</p>
@@ -74,29 +74,34 @@ function Index() {
         </div>
       </div>
       <div className="description" id="about">
-        <p className="details">
-          Bringing You The Very First Island Party Experience Here In Ghana.
-        </p>
-        <p className="details">
-          The Best Beach And Pool Parties Will Be Happening Right Here On The
-          Island As Well
-        </p>
-        <p className="details">
+        <div>
           {" "}
-          An Indoor Club Later In The Night. Three Parties In One!
-        </p>
-        <p className="details"> It’s All About Unlimited And Non Stop Vibes.</p>
-
-        <p className="m-4">
-          See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
-        </p>
+          <p className="details">
+            Bringing You The Very First Island Party Experience Here In Ghana.
+          </p>
+          <p className="details">
+            The Best Beach And Pool Parties Will Be Happening Right Here On The
+            Island As Well
+          </p>
+          <p className="details">
+            {" "}
+            An Indoor Club Later In The Night. Three Parties In One!
+          </p>
+          <p className="details ">
+            {" "}
+            It’s All About Unlimited And Non Stop Vibes.
+          </p>
+          <p className="m-4">
+            See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
+          </p>
+        </div>
 
         <button className="btnSecondary">Grab a ticket</button>
       </div>
 
       <div className="tableSection" id="tables">
         {" "}
-        Table Section Table Section Table Section Table Section
+        <p id="packages">Table Packages</p>
       </div>
     </div>
   );

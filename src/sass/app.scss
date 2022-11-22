@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    height: 500px;
+    // height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,12 +41,6 @@ body {
     }
 }
 
-@media screen and (min-width: 1200px) {
-    .hideBtn {
-        display: none;
-    }
-}
-
 .nav-link {
     color: black;
     padding: 5px 20px;
@@ -75,7 +69,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 550px;
+    // width: 550px;
     margin: auto;
     font-family: "Pacifico", cursive;
     color: white;
@@ -83,11 +77,15 @@ body {
         font-family: "Pacifico";
         font-style: normal;
         font-weight: 400;
-        font-size: 36px;
-        line-height: 48px;
+        font-size: 20px;
+        line-height: 20px;
         /* or 120% */
         text-align: center;
         color: #ffffff;
+        @media screen and (min-width: 400px) {
+            font-size: 36px;
+            line-height: 48px;
+        }
     }
 }
 
@@ -96,13 +94,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 72px 340px;
     font-family: "Figtree";
     font-style: normal;
     font-weight: 500;
     color: #525252;
+    margin-top: 40px;
+    margin-bottom: 50px;
     .details {
         margin-bottom: 0px;
+    }
+    @media screen and (min-width: 400px) {
+        margin-top: 72px;
     }
 }
 
@@ -110,4 +112,20 @@ body {
     @include buttonStyles(#ec3683,
     #ffffff,
     transparent);
+}
+
+.tableSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #packages {
+        font-family: "Figtree";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        color: #1e1e1e;
+    }
 }
