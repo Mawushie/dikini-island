@@ -1,23 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-function Table1() {
+function Table2() {
   return (
     <div>
       <Container>
         <div>
-          <h4 className="mb-4">Fiji (Cabana) GH¢ 20,000</h4>
+          <h4 className="mb-4">Aruba (Cabana) GH¢ 12,000</h4>
           <Paragraph>
             <img src="./images/ellipse.png" />
-            Jacuzzi
-          </Paragraph>
-          <Paragraph>
-            <img src="./images/ellipse.png" />
-            2x Moet Rose
-          </Paragraph>
-          <Paragraph>
-            <img src="./images/ellipse.png" />
-            1x Hennessy VS
+            1x Moet Rose
           </Paragraph>
           <Paragraph>
             <img src="./images/ellipse.png" />
@@ -25,24 +17,23 @@ function Table1() {
           </Paragraph>
           <Paragraph>
             <img src="./images/ellipse.png" />
-            1x Belaire Luxe
+            1x Belaire Gold/Luxe
           </Paragraph>
           <Paragraph>
             <img src="./images/ellipse.png" />
-            12x Chasers (Bel Ice and Coke)
+            8x Chasers (Bel Ice and Coke)
           </Paragraph>
           <Paragraph>
             <img src="./images/ellipse.png" />
-            2x Seafood Platter with Pork/Chicken Wings with a Side of Fried
+            1x Seafood Platter with Pork/Chicken Wings with a Side of Fried
             Yam/Potatoes
           </Paragraph>
           <Paragraph>
-            <img src="./images/ellipse.png" />
-            12 Complimentary bands
+            <img src="./images/ellipse.png" />8 Complimentary bands
           </Paragraph>
         </div>
 
-        <div className="buttons">
+        <div>
           {" "}
           <ButtonDiv>
             <button className="btnPrimary" id="reservelg">
@@ -84,21 +75,6 @@ const ButtonDiv = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-
-  /* #reservesm {
-    display: none;
-  }
-  #reservelg {
-    display: block;
-  }
-  @media only screen and (max-width: 400px) {
-    #reservesm {
-      display: block;
-    }
-    #reservelg {
-      display: none;
-    }
-  } */
 `;
 
-export default Table1;
+export default Table2;

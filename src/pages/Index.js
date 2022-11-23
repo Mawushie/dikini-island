@@ -5,9 +5,12 @@ import TableCards from "../components/TableCards";
 import Tables from "../components/Tables";
 import Model1 from "../components/Model1";
 import Table1 from "../components/Table1";
+import Table2 from "../components/Table2";
 import Model2 from "../components/Model2";
 import Model3 from "../components/Model3";
 import Model4 from "../components/Model4";
+import Table3 from "../components/Table3";
+import Table4 from "../components/Table4";
 
 function Index() {
   return (
@@ -104,13 +107,13 @@ function Index() {
         </div>
       </div>
 
-      <div className="tableSection mx-4" id="tables">
+      <div className="tableSection" id="tables">
         <p id="packages">Table Packages</p>
         <div className="tables">
           <Table1 />
-          <Table1 />
-          <Table1 />
-          <Table1 />
+          <Table2 />
+          <Table3 />
+          <Table4 />
         </div>
       </div>
 
@@ -129,8 +132,34 @@ function Index() {
         </div>
       </div>
 
+      <div className="tableSection mx-4" id="tables">
+        <p id="packages">Discover The Platinum Bay Hotel</p>
+        <div className="hotels">
+          <img src="./images/hotel1.png" />
+          <img src="./images/hotel2.png" />
+          <img src="./images/hotel3.png" />
+        </div>
+        <div class="platinumSocials">
+          <p>Follow The Platinum Bay on socials</p>
+          <div>
+            <a href="https://twitter.com/theplatinumbay1" target="_blank">
+              <img src="./images/twitter.png" />
+            </a>
+            <a
+              href="https://www.instagram.com/theplatinumbayhotel"
+              target="_blank"
+            >
+              <img src="./images/instagram.png" />
+            </a>
+            <a href="https://theplatinumbayhotel.net" target="_blank">
+              <img src="./images/website.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="partners mx-4">
-        <p>Official Partners</p>
+        <p className="fw-bold">Official Partners</p>
         <div className="partnerslogos1">
           <img src="./images/tsfgroup.png" />
           <img src="./images/belaqua.png" />
