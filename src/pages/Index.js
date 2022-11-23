@@ -1,6 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../sass/app.scss";
+import TableCards from "../components/TableCards";
+import Tables from "../components/Tables";
 
 function Index() {
   return (
@@ -96,14 +98,34 @@ function Index() {
           <p className="m-4">
             See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
           </p>
+          <button className="btnSecondary">Grab a ticket</button>
         </div>
-
-        <button className="btnSecondary">Grab a ticket</button>
       </div>
 
-      <div className="tableSection" id="tables">
+      <div className="tableSection mx-4" id="tables">
         {" "}
         <p id="packages">Table Packages</p>
+        <Tables />
+      </div>
+
+      <div className="modelsSection mx-4">
+        <div>
+          {" "}
+          <img src="./images/model1.png" />
+        </div>
+        <div>
+          {" "}
+          <img src="./images/model2.png" />
+        </div>
+
+        <div>
+          {" "}
+          <img src="./images/model3.png" />
+        </div>
+        <div>
+          {" "}
+          <img src="./images/model4.png" />
+        </div>
       </div>
     </div>
   );

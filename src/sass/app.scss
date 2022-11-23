@@ -101,6 +101,11 @@ body {
     color: #525252;
     margin-top: 24px;
     margin-bottom: 50px;
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .details {
         margin-bottom: 0px;
     }
@@ -112,7 +117,7 @@ body {
 .btnPrimary {
     @include buttonStyles(#ffffff,
     #ec3683,
-    transparent);
+    #ec3683);
 }
 
 .btnSecondary {
@@ -134,5 +139,32 @@ body {
         line-height: 38px;
         text-align: center;
         color: #1e1e1e;
+        margin-bottom: 40px;
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .navbar-collapse {
+        background: #ffffff;
+        a {
+            color: #525252;
+        }
+    }
+}
+
+.tablesList {
+    margin-left: 100px;
+}
+
+.modelsSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// #reservelg {
+//     display: none;
+//     @media only screen and (min-width: 400px) {
+//         display: block;
+//     }
+// }
