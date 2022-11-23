@@ -104,7 +104,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="tableSection mx-4">
+      <div className="tableSection mx-4" id="tables">
         <p id="packages">Table Packages</p>
         <div className="tables">
           <Table1 />
@@ -126,6 +126,43 @@ function Index() {
           <Model2 />
           <Model3 />
           <Model4 />
+        </div>
+      </div>
+
+      <div className="partners mx-4">
+        <p>Official Partners</p>
+        <div className="partnerslogos1">
+          <img src="./images/tsfgroup.png" />
+          <img src="./images/belaqua.png" />
+          <img src="./images/belice.png" />
+        </div>
+
+        <div className="partnerslogos2">
+          <div className="mb-4" id="part2">
+            <img src="./images/tsfgroup.png" />
+            <img src="./images/belice.png" />
+          </div>
+          <div>
+            <img src="./images/belaqua.png" />
+          </div>
+        </div>
+      </div>
+
+      <div className="footer">
+        <div>© Dikini Island 2022</div>
+        <div className="socials">
+          <a
+            href="https://web.facebook.com/swimsbydidi?_rdc=1&_rdr"
+            target="_blank"
+          >
+            <img src="./images/facebook.png" />
+          </a>
+          <a href="https://twitter.com/swimsbydidi" target="_blank">
+            <img src="./images/twitter.png" />
+          </a>
+          <a href="https://www.instagram.com/swimsbydidi/" target="_blank">
+            <img src="./images/instagram.png" />
+          </a>
         </div>
       </div>
     </div>
