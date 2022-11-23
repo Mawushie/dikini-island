@@ -66,7 +66,7 @@ const Container = styled.div`
 const Paragraph = styled.p`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 4px;
 `;

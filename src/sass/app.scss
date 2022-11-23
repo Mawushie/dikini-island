@@ -129,8 +129,9 @@ body {
 .tableSection {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #ec3683;
+    // justify-content: center;
+    // align-items: center;
     #packages {
         font-family: "Figtree";
         font-style: normal;

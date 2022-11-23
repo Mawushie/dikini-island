@@ -9,11 +9,13 @@ function Tables() {
       <Container>
         <Table1 />
         <Table1 />
-      </Container>
-      <Container>
         <Table1 />
         <Table1 />
       </Container>
+      {/* <Container>
+        <Table1 />
+        <Table1 />
+      </Container> */}
     </div>
   );
 }

@@ -8,7 +8,7 @@ function Index() {
   return (
     <div>
       <div className="header">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light ">
           <div class="container">
             <a class="navbar-brand" href="#intro">
               <img src="./images/logo1.png" alt="navlogo" />
@@ -105,6 +105,7 @@ function Index() {
       <div className="tableSection mx-4" id="tables">
         {" "}
         <p id="packages">Table Packages</p>
+        {/* <div className="tablePackages">Hello</div> */}
         <Tables />
       </div>
 
