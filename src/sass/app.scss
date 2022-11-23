@@ -210,11 +210,11 @@ body {
     margin-bottom: 50px;
     margin-left: 24px;
     margin-right: 24px;
-    @media screen and (max-width: 400px) {
-        button {
-            display: none;
-        }
-    }
+    // @media screen and (max-width: 400px) {
+    //     button {
+    //         display: none;
+    //     }
+    // }
     @media screen and (min-width: 1300px) {
         margin-left: 50px;
         // margin-right: 80px;
