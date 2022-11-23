@@ -136,6 +136,10 @@ body {
     margin-left: 40px;
     margin-right: 40px;
     color: #1e1e1e;
+    @media screen and (max-width: 576px) {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
     #packages {
         font-family: "Figtree";
         font-style: normal;
