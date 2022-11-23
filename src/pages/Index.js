@@ -108,7 +108,7 @@ function Index() {
         <Tables />
       </div>
 
-      <div className="modelsSection mx-4">
+      {/* <div className="modelsSection mx-4">
         <div>
           {" "}
           <img src="./images/model1.png" />
@@ -126,7 +126,7 @@ function Index() {
           {" "}
           <img src="./images/model4.png" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
