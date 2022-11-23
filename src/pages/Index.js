@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../sass/app.scss";
 import TableCards from "../components/TableCards";
 import Tables from "../components/Tables";
+import Models from "../components/Models";
 
 function Index() {
   return (
@@ -103,31 +104,13 @@ function Index() {
       </div>
 
       <div className="tableSection mx-4" id="tables">
-        {" "}
         <p id="packages">Table Packages</p>
-        {/* <div className="tablePackages">Hello</div> */}
         <Tables />
       </div>
 
-      {/* <div className="modelsSection mx-4">
-        <div>
-          {" "}
-          <img src="./images/model1.png" />
-        </div>
-        <div>
-          {" "}
-          <img src="./images/model2.png" />
-        </div>
-
-        <div>
-          {" "}
-          <img src="./images/model3.png" />
-        </div>
-        <div>
-          {" "}
-          <img src="./images/model4.png" />
-        </div>
-      </div> */}
+      <div className="modelsSection mx-4" id="tables">
+        <Models />
+      </div>
     </div>
   );
 }

@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Table1 from "./Table1";
 
-function Tables() {
+function Models() {
   return (
     <div className="tableList">
       <Container>
-        <Table1 />
-        <Table1 />
-        <Table1 />
-        <Table1 />
+        <img src="./images/model1.png" /> <img src="./images/model2.png" />
+        <img src="./images/model3.png" /> <img src="./images/model4.png" />
       </Container>
     </div>
   );
@@ -25,4 +22,4 @@ const Container = styled.div`
     width: 100%;
   }
 `;
-export default Tables;
+export default Models;
