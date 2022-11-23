@@ -149,7 +149,7 @@ body {
         @media screen and (max-width: 576px) {
             flex-direction: column;
         }
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 1400px) {
             justify-content: center;
         }
     }
@@ -172,13 +172,16 @@ body {
     align-items: center;
     margin-top: 150px;
     margin-bottom: 50px;
+    margin-left: 24px;
+    margin-right: 24px;
     @media screen and (max-width: 400px) {
         button {
             display: none;
         }
     }
     @media screen and (min-width: 1200px) {
-        gap: 60px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
 }
 

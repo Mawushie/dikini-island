@@ -114,7 +114,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="shop mx-4">
+      <div className="shop ">
         <p>Shop the dikinis</p>
         <a class="nav-link" href="https://swimsbydidi.com/" target="_blank">
           <button className="btnPrimary">Visit shop</button>
