@@ -5,11 +5,17 @@
     align-items: center;
     padding: 14px 16px;
     box-sizing: border-box;
-    // width: 140px;
+    width: 140px;
     height: 48px;
     gap: 8px;
     border: 1px solid $border;
     border-radius: 100px;
     background: $bg;
     color: $color;
+    @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        gap: 8px;
+    }
 }

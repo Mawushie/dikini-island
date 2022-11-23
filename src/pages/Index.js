@@ -3,7 +3,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../sass/app.scss";
 import TableCards from "../components/TableCards";
 import Tables from "../components/Tables";
-import Models from "../components/Models";
+import Model1 from "../components/Model1";
+import Table1 from "../components/Table1";
+import Model2 from "../components/Model2";
+import Model3 from "../components/Model3";
+import Model4 from "../components/Model4";
 
 function Index() {
   return (
@@ -80,7 +84,6 @@ function Index() {
       </div>
       <div className="description" id="about">
         <div>
-          {" "}
           <p className="details mx-4">
             Bringing You The Very First Island Party Experience Here In Ghana.
           </p>
@@ -89,11 +92,9 @@ function Index() {
             Island As Well
           </p>
           <p className="details mx-4">
-            {" "}
             An Indoor Club Later In The Night. Three Parties In One!
           </p>
           <p className="details mx-4 ">
-            {" "}
             It’s All About Unlimited And Non Stop Vibes.
           </p>
           <p className="m-4">
@@ -103,13 +104,29 @@ function Index() {
         </div>
       </div>
 
-      <div className="tableSection mx-4" id="tables">
+      <div className="tableSection mx-4">
         <p id="packages">Table Packages</p>
-        <Tables />
+        <div className="tables">
+          <Table1 />
+          <Table1 />
+          <Table1 />
+          <Table1 />
+        </div>
       </div>
 
-      <div className="modelsSection mx-4" id="tables">
-        <Models />
+      <div className="shop mx-4">
+        <p>Shop the dikinis</p>
+        <a class="nav-link" href="https://swimsbydidi.com/" target="_blank">
+          <button className="btnPrimary">Visit shop</button>
+        </a>
+      </div>
+      <div className="modelSection mx-4">
+        <div className="models">
+          <Model1 />
+          <Model2 />
+          <Model3 />
+          <Model4 />
+        </div>
       </div>
     </div>
   );

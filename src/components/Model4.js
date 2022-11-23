@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-function Model1() {
+function Model4() {
   return (
     <div>
       <Container>
         <div>
-          <img src="./images/model1.png" className="image" />
+          <img src="./images/model4.png" className="image" />
         </div>
       </Container>
     </div>
@@ -32,4 +32,4 @@ const Container = styled.div`
   }
 `;
 
-export default Model1;
+export default Model4;
