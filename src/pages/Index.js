@@ -85,6 +85,38 @@ function Index() {
           <p>The Platinum Bay Hotel</p>
         </div>
       </div>
+      {/* <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./images/backgroundlg.png"
+              class="d-block w-100"
+              alt="..."
+              data-bs-interval="1000"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/background2.png"
+              class="d-block w-100"
+              alt="..."
+              data-bs-interval="1000"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/background3.png"
+              class="d-block w-100"
+              alt="..."
+              data-bs-interval="1000"
+            />
+          </div>
+        </div>
+      </div> */}
       <div className="description" id="about">
         <div>
           <p className="details mx-4">
