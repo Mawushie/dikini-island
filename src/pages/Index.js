@@ -78,7 +78,7 @@ function Index() {
           <div id="logo2">
             <img src="./images/logo2.png" alt="logo2" />
           </div>
-
+          <button className="btnSecondary headerbtn">Grab a ticket</button>
           <p className="secret">Whatever Happens On The Island</p>
           <p className="secret">Stays On The Island</p>
           <p>17th December, 2022</p>
@@ -119,6 +119,8 @@ function Index() {
       </div> */}
       <div className="description" id="about">
         <div>
+          <p className="details secret">Whatever Happens On The Island,</p>
+          <p className="secret">Stays On The Island!!!</p>
           <p className="details mx-4">
             Bringing You The Very First Island Party Experience Here In Ghana.
           </p>
@@ -200,11 +202,11 @@ function Index() {
 
         <div className="partnerslogos2">
           <div className="mb-4" id="part2">
-            <img src="./images/tsfgroup.png" />
-            <img src="./images/belice.png" />
+            <img src="./images/tsfgroup.png" id="tsf" />
+            <img src="./images/belice.png" id="belice" />
           </div>
           <div>
-            <img src="./images/belaqua.png" />
+            <img src="./images/belaqua.png" id="belaqua" />
           </div>
         </div>
       </div>

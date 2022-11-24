@@ -84,9 +84,17 @@ body {
         /* or 120% */
         text-align: center;
         color: #ffffff;
-        @media screen and (min-width: 400px) {
+        display: block;
+        @media screen and (max-width: 400px) {
             font-size: 36px;
             line-height: 48px;
+            display: none;
+        }
+    }
+    .headerbtn {
+        display: none;
+        @media screen and (max-width: 400px) {
+            display: flex;
         }
     }
 }
@@ -101,6 +109,11 @@ body {
     font-weight: 500;
     font-size: 20px;
     color: #525252;
+    div {
+        p {
+            text-align: center;
+        }
+    }
     // background-color: antiquewhite;
     margin-top: 24px;
     margin-bottom: 50px;
@@ -112,8 +125,18 @@ body {
     .details {
         margin-bottom: 0px;
     }
-    @media screen and (min-width: 400px) {
+    @media screen and (max-width: 400px) {
         margin-top: 48px;
+        font-size: 14px;
+    }
+    .secret {
+        text-align: center;
+        color: #525252;
+        display: none;
+        @media screen and (max-width: 400px) {
+            font-size: 14px;
+            display: flex;
+        }
     }
 }
 
@@ -250,7 +273,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
     margin-top: 100px;
     color: #1e1e1e;
     .partnerslogos1 {
@@ -267,12 +290,25 @@ body {
         gap: 40px;
         #part2 {
             display: flex;
+            gap: 24px;
         }
         @media screen and (max-width: 576px) {
             gap: 16px;
         }
     }
     @media screen and (max-width: 576px) {
+        #tsf {
+            width: 96px;
+            height: 56px;
+        }
+        #belice {
+            width: 71px;
+            height: 56px;
+        }
+        #belaqua {
+            width: 142px;
+            height: 32px;
+        }
         .partnerslogos1 {
             display: none;
         }
