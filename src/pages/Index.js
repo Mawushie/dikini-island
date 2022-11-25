@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../sass/app.scss";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Model1 from "../components/Model1";
 import Table1 from "../components/Table1";
@@ -11,19 +10,21 @@ import Model3 from "../components/Model3";
 import Model4 from "../components/Model4";
 import Table3 from "../components/Table3";
 import Table4 from "../components/Table4";
+import BuyTicketModal from "../components/BuyTicketModal";
+import ReserveTableModal from "../components/ReserveTableModal";
 
 function Index() {
   return (
     <div>
       <div className="header">
-        <nav class="navbar navbar-expand-md navbar-light ">
-          <div class="container">
-            <a class="navbar-brand" href="#intro">
+        <nav className="navbar navbar-expand-md navbar-light ">
+          <div className="container">
+            <a className="navbar-brand" href="#intro">
               <img src="./images/logo1.png" alt="navlogo" />
             </a>
 
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#main-nav"
@@ -31,40 +32,40 @@ function Index() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
 
             <div
-              class="collapse navbar-collapse justify-content-end align-center"
+              className="collapse navbar-collapse justify-content-end align-center"
               id="main-nav"
             >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#about">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link" href="#about">
                     About
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#ticket">
+                <li className="nav-item">
+                  <a className="nav-link" href="#ticket">
                     Tickets{" "}
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#tables">
+                <li className="nav-item">
+                  <a className="nav-link" href="#tables">
                     Tables{" "}
                   </a>
                 </li>
 
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     href="https://swimsbydidi.com/"
                     target="_blank"
                   >
                     Shop Dikinis
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <button
                     className="navBtn"
                     data-bs-toggle="modal"
@@ -99,41 +100,6 @@ function Index() {
           <p className="secret">17th December, 2022</p>
           <p className="secret">The Platinum Bay Hotel</p>
         </div>
-      </div>
-      <div
-        id="carouselExampleInterval"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleInterval"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleInterval"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
       <div className="description" id="about">
         <div>
@@ -229,7 +195,7 @@ function Index() {
             <img src="./images/tsfgroup.png" id="tsf" />
             <img src="./images/belice.png" id="belice" />
           </div>
-          <div>
+          <div style={{ textAlign: "center" }}>
             <img src="./images/belaqua.png" id="belaqua" />
           </div>
         </div>
@@ -253,180 +219,8 @@ function Index() {
         </div>
       </div>
 
-      {/*Buy Ticket Modal*/}
-      <div
-        class="modal fade"
-        id="buyTicketModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Buy Ticket
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <input
-                  type="text"
-                  placeholder="Type your first name here"
-                  className="w-100 inputs"
-                />
-                <input
-                  type="text"
-                  placeholder="Type your last name here"
-                  className="w-100 inputs"
-                />
-                <input
-                  type="email"
-                  placeholder="Type your email address here"
-                  className="w-100 inputs"
-                />
-                <PhoneInput
-                  inputStyle={{
-                    width: "100%",
-                    height: 56,
-                    backgroundColor: "#FFFFFF",
-                    border: 1,
-                    borderStyle: "solid",
-                    borderColor: "#E7E9EB",
-                    borderRadius: 8,
-                  }}
-                  country={"gh"}
-                  onlyCountries={["gh"]}
-                  enableSearch={true}
-                  // disableCountryCode
-                  placeholder=""
-                  required={true}
-                  dropdownClass="myClass"
-                />
-                <select name="cars" form="carform" className="w-100 inputs">
-                  <option value="volvo">Male</option>
-                  <option value="saab">Female</option>
-                </select>
-                <input
-                  type="number"
-                  placeholder="Enter quantity of tickets you’d like to buy"
-                  className="w-100 inputs"
-                />
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btnPrimary"
-                data-bs-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button type="button" class="btn btnSecondary">
-                Buy a ticket
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/*Reserve Ticket Modal*/}
-      <div
-        class="modal fade"
-        id="reserveModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Reserve Table
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <input
-                  type="text"
-                  placeholder="Type your first name here"
-                  className="w-100 inputs"
-                />
-                <input
-                  type="text"
-                  placeholder="Type your last name here"
-                  className="w-100 inputs"
-                />
-                <input
-                  type="email"
-                  placeholder="Type your email address here"
-                  className="w-100 inputs"
-                />
-                <PhoneInput
-                  inputStyle={{
-                    width: "100%",
-                    height: 56,
-                    backgroundColor: "#FFFFFF",
-                    border: 1,
-                    borderStyle: "solid",
-                    borderColor: "#E7E9EB",
-                    borderRadius: 8,
-                  }}
-                  country={"gh"}
-                  onlyCountries={["gh"]}
-                  enableSearch={true}
-                  // disableCountryCode
-                  placeholder=""
-                  required={true}
-                  dropdownClass="myClass"
-                />
-                <select
-                  name="cars"
-                  id="tables"
-                  form="carform"
-                  className="w-100 inputs"
-                >
-                  <option value="cabana">Fiji (Cabana) GH¢ 20,000</option>
-                  <option value="aruba">Aruba (Cabana) GH¢ 12,000</option>
-                  <option value="borabora">
-                    Bora Bora (Long Table) GH¢ 6,000
-                  </option>
-                  <option value="bali">Bali (Round Table) GH¢ 3,000</option>
-                </select>
-                <input
-                  type="number"
-                  placeholder="Enter quantity of tickets you’d like to buy"
-                  className="w-100 inputs"
-                />
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btnPrimary"
-                data-bs-dismiss="modal"
-              >
-                Reserve table
-              </button>
-              <button type="button" class="btn btnSecondary">
-                Buy table
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BuyTicketModal />
+      <ReserveTableModal />
     </div>
   );
 }

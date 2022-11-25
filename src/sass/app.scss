@@ -152,12 +152,18 @@ body {
     @include buttonStyles(#ffffff,
     #ec3683,
     #ec3683);
+    &:hover {
+        background-color: #eea3c3;
+    }
 }
 
 .btnSecondary {
     @include buttonStyles(#ec3683,
     #ffffff,
     transparent);
+    &:hover {
+        background-color: #eea3c3;
+    }
 }
 
 .tableSection {
@@ -387,6 +393,10 @@ body {
 
 select {
     margin-top: 20px;
+}
+
+option {
+    text-align: center;
 }
 
 .modal-header {
