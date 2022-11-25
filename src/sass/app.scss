@@ -57,6 +57,8 @@ body {
 }
 
 .navBtn {
+    margin-left: 20px;
+    margin-bottom: 20px;
     @include buttonStyles(transparent,
     #ec3683,
     #ec3683);
@@ -97,6 +99,11 @@ body {
         @media screen and (max-width: 400px) {
             display: flex;
         }
+    }
+    #hero-btn {
+        font-family: "Figtree";
+        font-style: normal;
+        margin-bottom: 40px;
     }
 }
 
@@ -350,4 +357,42 @@ body {
     height: 670px;
     width: 100%;
     object-fit: cover;
+}
+
+.react-tel-input .flag-dropdown {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 8px 8px 8px 8px !important;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8px 16px;
+    gap: 4px;
+    margin-bottom: 20px;
+    // width: 448px;
+    height: 56px;
+    background: #ffffff;
+    /* Grays/Gray 40 */
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+}
+
+select {
+    margin-top: 20px;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
 }

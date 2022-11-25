@@ -36,11 +36,22 @@ function Table2() {
         <div>
           {" "}
           <ButtonDiv>
-            <button className="btnPrimary" id="reservelg">
+            <button
+              className="btnPrimary"
+              id="reservelg"
+              data-bs-toggle="modal"
+              data-bs-target="#reserveModal"
+            >
               Reserve a table
             </button>
 
-            <button className="btnSecondary">Buy a table</button>
+            <button
+              className="btnSecondary"
+              data-bs-toggle="modal"
+              data-bs-target="#reserveModal"
+            >
+              Buy a table
+            </button>
           </ButtonDiv>
         </div>
       </Container>
