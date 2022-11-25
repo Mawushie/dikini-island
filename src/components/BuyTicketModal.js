@@ -1,34 +1,139 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
+import Moment from "moment";
+import axios from "axios";
+import Select from "react-select";
 
 function BuyTicketModal() {
   const [buttonText, setButtonText] = useState("Buy a ticket");
   const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState("");
+
   const [modalData, setModalData] = useState({
     firstname: "",
     lastname: "",
     email: "",
-    gender: "",
     quantity: "",
   });
+  const option = [
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+  ];
 
-  const { firstname, lastname, email, gender, quantity } = modalData;
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: "100%",
+      minHeight: 56,
+      borderColor: "#d9d9d9",
+      borderRadius: 8,
+      marginTop: 20,
+      marginBottom: 20,
+    }),
+    option: (styles, { isFocused }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? "#e8e8e8" : null,
+        color: "#001927",
+      };
+    },
+  };
+  const { firstname, lastname, email, quantity } = modalData;
   function handleOnChange(event) {
-    if (gender == "female") {
-      setButtonText("RSVP");
-    }
-    if (gender == "male") {
-      setButtonText("Buy a Ticket");
-    }
     event.preventDefault();
 
     setModalData({ ...modalData, [event.target.name]: event.target.value });
     const { name, value } = event.target;
   }
+
+  const handleSelectChange = (event) => {
+    setGender(event.value);
+  };
+  //   console.log(gender);
   function handleSubmit() {
-    const data = { firstname, lastname, email, amount: quantity * 200 };
-    console.log(data);
+    const amount = quantity * 200;
+    const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
+    const date = new Date();
+    const receiptData = {
+      user: {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+      },
+      order: {
+        quantity: quantity,
+        amount: amount,
+      },
+    };
+    console.log(receiptData);
+    //     const data = `<API3G>
+    // <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+    // <Request>createToken</Request>
+    // <Transaction>
+    //     <PaymentAmount>${amount}</PaymentAmount>
+    //     <PaymentCurrency>ghc</PaymentCurrency>
+    //     <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
+    //     <BackURL>http://www.dikinisland.com </BackURL>
+    //     <customerFirstName>John</customerFirstName>
+    //     <customerLastName>Doe</customerLastName>
+    //     <customerEmail>test@directpayonline.com</customerEmail>
+    // </Transaction>
+    // <Services>
+    //   <Service>
+    //     <ServiceType>3854</ServiceType>
+    //     <ServiceDescription>Test Product</ServiceDescription>
+    //     <ServiceDate>${dateFormat}</ServiceDate>
+    //   </Service>
+    // </Services>
+    // </API3G>`;
+
+    const testdata = `<API3G>
+<CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+<Request>createToken</Request>
+<Transaction>
+    <PaymentAmount>300</PaymentAmount>
+    <PaymentCurrency>tzs</PaymentCurrency>
+    <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
+    <BackURL>http://www.domain.com/backurl.php </BackURL>
+    <customerFirstName>John</customerFirstName>
+    <customerLastName>Doe</customerLastName>
+    <customerEmail>test@directpayonline.com</customerEmail>
+</Transaction>
+<Services>
+  <Service>
+    <ServiceType>3854</ServiceType>
+    <ServiceDescription>Test Product</ServiceDescription>
+    <ServiceDate>2013/12/20 19:00</ServiceDate>
+  </Service>
+</Services>
+</API3G>`;
+
+    console.log(testdata);
+
+    axios
+      .post(
+        "https://secure.3gdirectpay.com/API/v6/",
+        { body: testdata },
+
+        {
+          "Access-Control-Allow-Origin": true,
+        }
+      )
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
   }
+
+  useEffect(() => {
+    if (gender == "female") {
+      setButtonText("RSVP");
+      document.getElementById("quantity").style.display = "none";
+      console.log(document.getElementById("quantity"));
+    }
+    if (gender == "male") {
+      setButtonText("Buy a Ticket");
+      document.getElementById("quantity").style.display = "block";
+    }
+  });
   return (
     <div>
       <div
@@ -100,19 +205,21 @@ function BuyTicketModal() {
                   required={true}
                   dropdownClass="myClass"
                 />
-                <select
-                  name="gender"
-                  value={gender}
-                  className="w-100 inputs"
-                  onChange={handleOnChange}
-                >
-                  <option value="" disabled>
-                    Select Gender
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
+
+                <div>
+                  <Select
+                    onChange={handleSelectChange}
+                    options={option}
+                    styles={customStyles}
+                    placeholder="Gender"
+                    components={{
+                      IndicatorSeparator: () => null,
+                    }}
+                  />
+                </div>
+
                 <input
+                  id="quantity"
                   name="quantity"
                   value={quantity}
                   type="number"

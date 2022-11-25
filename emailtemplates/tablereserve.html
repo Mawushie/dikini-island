@@ -32,15 +32,15 @@
         }
         
         .button {
-            width: 127px;
-            box-sizing: border-box;
-            padding: 14px 16px;
-            background: #000000;
-            border-radius: 2px;
-            text-align: center;
-            margin-top: 32px;
-            color: #ffffff;
-            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px 16px;
+            gap: 16px;
+            width: 600px;
+            height: 112px;
+            background: #FAFAFA;
+            border-radius: 12px;
         }
         
         .hr {
@@ -69,26 +69,19 @@
                     <tr>
                         <td align="center" valign="top">
                             <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailHeader">
-                                <tr style="background-color: #e7f3ef">
-                                    <td valign="top" style="padding: 48px">
-                                        <img src="https://s3.amazonaws.com/flair.africa.pub/email_templates/flairlogo.png" alt="logo" title="logo" />
+                                <tr>
+                                    <td valign="top" style="padding: 48px; text-align: center;">
+                                        <img src="../public/images/logo3.png" alt="logo" title="logo" />
 
                                         <h1 style="
                           margin-bottom: 0px;
                           margin-top: 32px;
                           vertical-align: bottom;
                         ">
-                                            Confirm your email
+                                            [[Firstname]], you've got tickets!
                                         </h1>
                                     </td>
-                                    <td style="
-                        margin-bottom: 0px;
-                        vertical-align: bottom;
-                        padding: 48px;
-                        width: 87px;
-                      ">
-                                        <img src="https://s3.amazonaws.com/flair.africa.pub/email_templates/approved.png" alt="illustration" title="illustration" />
-                                    </td>
+
                                 </tr>
                             </table>
                         </td>
@@ -98,80 +91,39 @@
                         <td align="center" valign="top">
                             <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
                                 <tr>
-                                    <td valign="top" style="padding: 48px">
-                                        <p>Hi Maxwell,</p>
+                                    <td valign="top" style="padding-top: 48px;padding-left:48px; padding-right: 48px">
+                                        <p>Hi [[Firstname]],</p>
                                         <p>
-                                            Thanks for signing up! At Flair, we are here to connect you to next job experience, mentorship or training opportunity.
+                                            Thank you for your purchase
                                         </p>
                                         <p>
-                                            If you’re ready to roll, click on the button below to confirm your email.
+                                            See you on 17th December, 2022 at The Platinum Bay Hotel
                                         </p>
-                                        <div class="button">
-                                            <a href="#" target="_blank" style="color: #ffffff; text-decoration: none">
-                          Confirm email</a
-                        >
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <!--footer-->
-            <tr style="background-color: white">
-              <td align="center" valign="top">
-                <table
-                  border="0"
-                  cellpadding="20"
-                  cellspacing="0"
-                  width="100%"
-                  id="emailFooter"
-                >
-                  <tr>
-                    <td style="padding: 48px">
-                      <div>
-                        <div
-                          style="
-                            border-top: 1px solid #e8e8e8;
-                            padding: 24px 0px;
-                          "
-                        >
-                          <table width="100%">
-                            <tr>
-                              <td style="color: #818181">Powered by Flair</td>
 
-                              <td style="color: #818181; width: 100px">
-                                <table width="100%">
-                                  <tr>
-                                    <td width="100%">
-                                      <div
-                                        style="
-                                          align-items: center;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <img
-                                          src="https://s3.amazonaws.com/flair.africa.pub/email_templates/copyright.png"
-                                          alt="copy-right"
-                                          height="14px"
-                                        />
-                                        Flair
-                                      </div>
                                     </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
+
+                                </tr>
+                                <tr style="background-color: #e8e8e8">
+                                    <tr>
+                                        <td valign="top" style="padding-left:48px; padding-right: 48px">
+                                            <p>[[QrCode]]</p>
+
+
+                                        </td>
+
+
+                                    </tr>
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
                 </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+            </td>
+        </tr>
     </table>
-  </body>
+</body>
+
 </html>

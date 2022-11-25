@@ -12,6 +12,7 @@ import Table3 from "../components/Table3";
 import Table4 from "../components/Table4";
 import BuyTicketModal from "../components/BuyTicketModal";
 import ReserveTableModal from "../components/ReserveTableModal";
+import SuccessModal from "../components/SuccessModal";
 
 function Index() {
   return (
@@ -221,6 +222,7 @@ function Index() {
 
       <BuyTicketModal />
       <ReserveTableModal />
+      <SuccessModal />
     </div>
   );
 }
