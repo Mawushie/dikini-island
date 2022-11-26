@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import Moment from "moment";
 import axios from "axios";
 import Select from "react-select";
+import xml2js from "xml2js";
 
 function BuyTicketModal() {
   const [buttonText, setButtonText] = useState("Buy a ticket");
@@ -66,28 +67,14 @@ function BuyTicketModal() {
       },
     };
     console.log(receiptData);
-    //     const data = `<API3G>
-    // <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
-    // <Request>createToken</Request>
-    // <Transaction>
-    //     <PaymentAmount>${amount}</PaymentAmount>
-    //     <PaymentCurrency>ghc</PaymentCurrency>
-    //     <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
-    //     <BackURL>http://www.dikinisland.com </BackURL>
-    //     <customerFirstName>John</customerFirstName>
-    //     <customerLastName>Doe</customerLastName>
-    //     <customerEmail>test@directpayonline.com</customerEmail>
-    // </Transaction>
-    // <Services>
-    //   <Service>
-    //     <ServiceType>3854</ServiceType>
-    //     <ServiceDescription>Test Product</ServiceDescription>
-    //     <ServiceDate>${dateFormat}</ServiceDate>
-    //   </Service>
-    // </Services>
-    // </API3G>`;
 
-    const testdata = `<API3G>
+    if (buttonText == "RSVP") {
+      console.log("You have successfully RSVPd");
+    } else {
+      localStorage.setItem("firstname", `${firstname}`);
+      localStorage.setItem("lastname", `${lastname}`);
+      localStorage.setItem("email", `${email}`);
+      const testdata = `<API3G>
 <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
 <Request>createToken</Request>
 <Transaction>
@@ -107,20 +94,54 @@ function BuyTicketModal() {
   </Service>
 </Services>
 </API3G>`;
+      const data = `<API3G>
+    <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+    <Request>createToken</Request>
+    <Transaction>
+        <PaymentAmount>${amount}</PaymentAmount>
+        <PaymentCurrency>tzs</PaymentCurrency>
+        <RedirectURL>http://www.dikinisland.com/redirect</RedirectURL>
+        <BackURL>http://www.dikinisland.com </BackURL>
+        <customerFirstName>${firstname}</customerFirstName>
+        <customerLastName>${lastname}</customerLastName>
+        <customerEmail>${email}</customerEmail>
+    </Transaction>
+    <Services>
+      <Service>
+        <ServiceType>3854</ServiceType>
+        <ServiceDescription>Test Product</ServiceDescription>
+        <ServiceDate>${dateFormat}</ServiceDate>
+      </Service>
+    </Services>
+    </API3G>`;
 
-    console.log(testdata);
-
-    axios
-      .post(
-        "https://secure.3gdirectpay.com/API/v6/",
-        { body: testdata },
-
-        {
-          "Access-Control-Allow-Origin": true,
-        }
-      )
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      const config = {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "text/xml",
+        },
+      };
+      let parser = new xml2js.Parser();
+      axios
+        .post(
+          "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+          data,
+          config
+        )
+        .then(function (res) {
+          parser.parseString(res.data, function (err, result) {
+            console.log(result.API3G.Result[0]);
+            if (result.API3G.Result[0] == "000") {
+              console.log("yaaa");
+              window.open(
+                ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
+                "_self"
+              );
+            }
+          });
+        })
+        .catch((err) => console.log(err));
+    }
   }
 
   useEffect(() => {
@@ -165,6 +186,7 @@ function BuyTicketModal() {
                   type="text"
                   placeholder="Type your first name here"
                   className="w-100 inputs"
+                  required="true"
                 />
                 <input
                   name="lastname"
@@ -239,6 +261,7 @@ function BuyTicketModal() {
                 Cancel
               </button>
               <button
+                data-bs-dismiss="modal"
                 type="button"
                 class="btn btnSecondary"
                 onClick={handleSubmit}

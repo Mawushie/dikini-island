@@ -6,7 +6,7 @@ function Table4() {
     <div>
       <Container>
         <div>
-          <h4 className="mb-4">Bali (Round Table) GH¢ 3,000</h4>
+          <h4 className="mb-4">Bali (Round Table) GH¢ 4,000</h4>
           <Paragraph>
             <img src="./images/ellipse.png" />
             2x Johnny Walker (Double Black, Red or Gold Label)

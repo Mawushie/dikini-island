@@ -16,31 +16,51 @@ import SuccessModal from "../components/SuccessModal";
 
 function Index() {
   useEffect(() => {
-    function changeBackGroundImage() {
-      const images = [
-        "./images/backgroundlg.png",
-        "./images/background1.png",
-        "./images/background2.png",
-        "./images/background3.png",
-        "./images/background4.png",
-      ];
-      var count = 0;
-      const backgroundSlider = document.getElementById("header");
-      backgroundSlider.style.backgroundImage = images[0];
-      console.log(backgroundSlider);
-      const interval = setInterval(function () {
-        backgroundSlider.style.backgroundImage = images[0];
-        count = count + 1;
-        if (count == images.length) {
-          count = 0;
-        }
-      }, 1000);
-    }
-    changeBackGroundImage();
-    // const backgroundSlider = document.getElementById("header");
-    // console.log(backgroundSlider);
-    // backgroundSlider.style.backgroundImage = "url('./images/background1.png')";
-  });
+    const images = [
+      "url('./images/background1.png')",
+      "url('./images/background2.png')",
+      "url('./images/background3.png')",
+      "url('./images/background4.png')",
+      "url('./images/backgroundlg.png')",
+    ];
+    var count = 0;
+    const backgroundSlider = document.getElementById("header");
+    backgroundSlider.style.backgroundImage = images[count];
+    const interval = setInterval(function () {
+      backgroundSlider.style.backgroundImage = count[0];
+      count = count + 1;
+      if (count == images.length) {
+        count = 0;
+      }
+    }, 1000);
+  }, []);
+  // useEffect(() => {
+  //   function changeBackGroundImage() {
+  //     const images = [
+  //       "./images/backgroundlg.png",
+  //       "./images/background1.png",
+  //       "./images/background2.png",
+  //       "./images/background3.png",
+  //       "./images/background4.png",
+  //     ];
+  //     var count = 0;
+  //     const backgroundSlider = document.getElementById("header");
+  //     backgroundSlider.style.backgroundImage = images[0];
+  //     // console.log(backgroundSlider);
+  //     const interval = setInterval(function () {
+  //       backgroundSlider.style.backgroundImage = images[0];
+  //       count = count + 1;
+  //       if (count == images.length) {
+  //         count = 0;
+  //       }
+  //     }, 1000);
+
+  //   }
+  //   changeBackGroundImage();
+  //   // const backgroundSlider = document.getElementById("header");
+  //   // console.log(backgroundSlider);
+  //   // backgroundSlider.style.backgroundImage = "url('./images/background1.png')";
+  // });
   return (
     <div>
       <div className="header" id="header">
