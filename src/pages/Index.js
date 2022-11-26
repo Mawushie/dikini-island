@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../sass/app.scss";
 import "react-phone-input-2/lib/style.css";
@@ -15,9 +15,35 @@ import ReserveTableModal from "../components/ReserveTableModal";
 import SuccessModal from "../components/SuccessModal";
 
 function Index() {
+  useEffect(() => {
+    function changeBackGroundImage() {
+      const images = [
+        "./images/backgroundlg.png",
+        "./images/background1.png",
+        "./images/background2.png",
+        "./images/background3.png",
+        "./images/background4.png",
+      ];
+      var count = 0;
+      const backgroundSlider = document.getElementById("header");
+      backgroundSlider.style.backgroundImage = images[0];
+      console.log(backgroundSlider);
+      const interval = setInterval(function () {
+        backgroundSlider.style.backgroundImage = images[0];
+        count = count + 1;
+        if (count == images.length) {
+          count = 0;
+        }
+      }, 1000);
+    }
+    changeBackGroundImage();
+    // const backgroundSlider = document.getElementById("header");
+    // console.log(backgroundSlider);
+    // backgroundSlider.style.backgroundImage = "url('./images/background1.png')";
+  });
   return (
     <div>
-      <div className="header">
+      <div className="header" id="header">
         <nav className="navbar navbar-expand-md navbar-light ">
           <div className="container">
             <a className="navbar-brand" href="#intro">

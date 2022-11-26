@@ -115,7 +115,9 @@ function BuyTicketModal() {
         { body: testdata },
 
         {
-          "Access-Control-Allow-Origin": true,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Allow-Credentials": "true",
         }
       )
       .then((res) => console.log(res.data))
