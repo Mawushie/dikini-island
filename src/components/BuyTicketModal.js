@@ -52,28 +52,32 @@ function BuyTicketModal() {
   };
   //   console.log(gender);
   function handleSubmit() {
+    localStorage.setItem("firstname", `${firstname}`);
+    localStorage.setItem("lastname", `${lastname}`);
+    localStorage.setItem("email", `${email}`);
     const amount = quantity * 200;
     const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
     const date = new Date();
-    const receiptData = {
-      user: {
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-      },
-      order: {
-        quantity: quantity,
-        amount: amount,
-      },
-    };
-    console.log(receiptData);
-
     if (buttonText == "RSVP") {
-      console.log("You have successfully RSVPd");
+      const data = {
+        user: {
+          firstName: `${firstname}`,
+          lastLame: `${lastname}`,
+          email: `${email}`,
+        },
+      };
+      console.log(data);
+      axios
+        .post("http://localhost:3009/api/v1/female/rsvp", data)
+        .then(function (res) {
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+      console.log(firstname, lastname, email);
+      alert(
+        "Thank you for your reservation. Check your email for confirmation."
+      );
     } else {
-      localStorage.setItem("firstname", `${firstname}`);
-      localStorage.setItem("lastname", `${lastname}`);
-      localStorage.setItem("email", `${email}`);
       const testdata = `<API3G>
 <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
 <Request>createToken</Request>
@@ -148,7 +152,7 @@ function BuyTicketModal() {
     if (gender == "female") {
       setButtonText("RSVP");
       document.getElementById("quantity").style.display = "none";
-      console.log(document.getElementById("quantity"));
+      //   console.log(document.getElementById("quantity"));
     }
     if (gender == "male") {
       setButtonText("Buy a Ticket");
