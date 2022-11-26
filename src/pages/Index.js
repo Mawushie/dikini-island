@@ -17,7 +17,7 @@ import SuccessModal from "../components/SuccessModal";
 function Index() {
   useEffect(() => {
     const images = [
-      "url('./images/background1.png')",
+      "url('./images/backgroundlg.png')",
       "url('./images/background2.png')",
       "url('./images/background3.png')",
       "url('./images/background4.png')",
