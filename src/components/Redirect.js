@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import xml2js from "xml2js";
 import BuyTicketModal from "./BuyTicketModal";
+import TicketConfirmed from "./TicketConfirmed";
+import { useNavigate } from "react-router-dom";
 
 function Redirect() {
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(window.location.search);
   const TransactionToken = queryParams.get("TransactionToken");
   console.log(TransactionToken);
@@ -62,6 +65,7 @@ function Redirect() {
                 console.log(res.data);
                 if (res.data.status == 200) {
                   localStorage.removeItem("email");
+                  alert("successful");
                 }
               })
               .catch((err) => console.log(err));
@@ -69,7 +73,7 @@ function Redirect() {
         });
       });
   });
-  return <div>Redirect Page</div>;
+  return <div>Loading.....</div>;
 }
 
 export default Redirect;

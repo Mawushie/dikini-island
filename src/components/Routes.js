@@ -12,7 +12,7 @@ function AppRoutes() {
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route path="/redirect" element={<Redirect />} />
-          <Route path="/confimed" element={<PaymentCorfirmed />} />
+          <Route path="/confirmed" element={<PaymentCorfirmed />} />
         </Routes>
       </BrowserRouter>
     </div>

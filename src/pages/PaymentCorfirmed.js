@@ -1,7 +1,7 @@
 import React from "react";
 
 function PaymentCorfirmed() {
-  return <div>PaymentCorfirmed</div>;
+  return <div>Payment Corfirmed</div>;
 }
 
 export default PaymentCorfirmed;
