@@ -3,8 +3,9 @@ import PhoneInput from "react-phone-input-2";
 import Moment from "moment";
 import axios from "axios";
 import Select from "react-select";
+import TableSuccess from "./TableSuccess";
 
-function BuyTicketModal() {
+function ReserveTableModal() {
   const [buttonText, setButtonText] = useState("Buy table");
   const [phone, setPhone] = useState("");
   const [table, setTable] = useState("");
@@ -15,10 +16,16 @@ function BuyTicketModal() {
     quantity: "",
   });
   const option = [
-    { value: "fiji", label: "Fiji (Cabana) GH¢ 20,000" },
-    { value: "fiji", label: "Aruba (Cabana) GH¢ 12,000" },
-    { value: "borabora", label: "Bora Bora (Long Table) GH¢ 6,000" },
-    { value: "bali", label: "Bali (Round Table) GH¢ 4,000" },
+    { value: "Fiji (Cabana) GH¢ 20,000", label: "Fiji (Cabana) GH¢ 20,000" },
+    { value: "Aruba (Cabana) GH¢ 12,000", label: "Aruba (Cabana) GH¢ 12,000" },
+    {
+      value: "Bora Bora (Long Table) GH¢ 6,000",
+      label: "Bora Bora (Long Table) GH¢ 6,000",
+    },
+    {
+      value: "Bali (Round Table) GH¢ 4,000",
+      label: "Bali (Round Table) GH¢ 4,000",
+    },
   ];
 
   const customStyles = {
@@ -39,6 +46,10 @@ function BuyTicketModal() {
       };
     },
   };
+
+  const handleSelect = (event) => {
+    setTable(event.value);
+  };
   const { firstname, lastname, email, quantity } = modalData;
   function handleOnChange(event) {
     event.preventDefault();
@@ -52,39 +63,14 @@ function BuyTicketModal() {
     const amount = quantity * 200;
     const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
     const date = new Date();
-    const receiptData = {
+    const tableReserveData = {
       user: {
         firstname: firstname,
         lastname: lastname,
         email: email,
-      },
-      order: {
-        quantity: quantity,
-        amount: amount,
+        table: table,
       },
     };
-
-    console.log(receiptData);
-    //     const data = `<API3G>
-    // <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
-    // <Request>createToken</Request>
-    // <Transaction>
-    //     <PaymentAmount>${amount}</PaymentAmount>
-    //     <PaymentCurrency>ghc</PaymentCurrency>
-    //     <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
-    //     <BackURL>http://www.dikinisland.com </BackURL>
-    //     <customerFirstName>John</customerFirstName>
-    //     <customerLastName>Doe</customerLastName>
-    //     <customerEmail>test@directpayonline.com</customerEmail>
-    // </Transaction>
-    // <Services>
-    //   <Service>
-    //     <ServiceType>3854</ServiceType>
-    //     <ServiceDescription>Test Product</ServiceDescription>
-    //     <ServiceDate>${dateFormat}</ServiceDate>
-    //   </Service>
-    // </Services>
-    // </API3G>`;
 
     const testdata = `<API3G>
 <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
@@ -111,8 +97,8 @@ function BuyTicketModal() {
 
     axios
       .post(
-        "https://secure.3gdirectpay.com/API/v6/",
-        { body: testdata },
+        "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+        testdata,
 
         {
           "Access-Control-Allow-Origin": "*",
@@ -124,30 +110,26 @@ function BuyTicketModal() {
       .catch((err) => console.log(err));
   }
   const handleReserve = () => {
+    console.log("table reserved");
     const reserveData = {
       user: {
-        firstname: firstname,
+        firstName: firstname,
         lastname: lastname,
         email: email,
         table: table,
       },
     };
-    console.log(reserveData);
+    axios
+      .post("http://localhost:3009/api/v1/table/reserve", reserveData)
+      .then(function (res) {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+
     console.log("reserved");
     console.log(reserveData);
   };
 
-  useEffect(() => {
-    // if (gender == "female") {
-    //   setButtonText("RSVP");
-    //   document.getElementById("quantity").style.display = "none";
-    //   console.log(document.getElementById("quantity"));
-    // }
-    // if (gender == "male") {
-    //   setButtonText("Buy a Ticket");
-    //   document.getElementById("quantity").style.display = "block";
-    // }
-  });
   return (
     <div>
       <div
@@ -222,12 +204,14 @@ function BuyTicketModal() {
 
                 <div>
                   <Select
+                    // value={table}
                     options={option}
                     styles={customStyles}
                     placeholder="Select table"
                     components={{
                       IndicatorSeparator: () => null,
                     }}
+                    onChange={handleSelect}
                   />
                 </div>
               </form>
@@ -238,7 +222,7 @@ function BuyTicketModal() {
                 class="btn btnPrimary"
                 data-bs-dismiss="modal"
                 data-bs-toggle="modal"
-                data-bs-target="#successModal"
+                data-bs-target="#tableSucess"
                 onClick={handleReserve}
               >
                 Reserve table
@@ -254,8 +238,9 @@ function BuyTicketModal() {
           </div>
         </div>
       </div>
+      <TableSuccess />
     </div>
   );
 }
 
-export default BuyTicketModal;
+export default ReserveTableModal;

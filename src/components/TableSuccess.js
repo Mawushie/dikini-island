@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-function SuccessModal() {
+function TableSuccess() {
   return (
     <div>
       <div
         class="modal fade successModal"
-        id="successModal"
+        id="tableSucess"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -14,7 +14,7 @@ function SuccessModal() {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                RSVP(Ladies)
+                Table Reservation
               </h5>
               <button
                 type="button"
@@ -24,7 +24,7 @@ function SuccessModal() {
               ></button>
             </div>
             <div class="modal-body">
-              Ticket Reserved. Check your email for confirmation.
+              Table Reserved. Check your email for confirmation.
             </div>
             {/* <div class="modal-footer">
               <button
@@ -50,4 +50,4 @@ function SuccessModal() {
   );
 }
 
-export default SuccessModal;
+export default TableSuccess;

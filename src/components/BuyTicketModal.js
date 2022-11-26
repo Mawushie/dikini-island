@@ -4,6 +4,7 @@ import Moment from "moment";
 import axios from "axios";
 import Select from "react-select";
 import xml2js from "xml2js";
+import SuccessModal from "./SuccessModal";
 
 function BuyTicketModal() {
   const [buttonText, setButtonText] = useState("Buy a ticket");
@@ -74,9 +75,6 @@ function BuyTicketModal() {
         })
         .catch((err) => console.log(err));
       console.log(firstname, lastname, email);
-      alert(
-        "Thank you for your reservation. Check your email for confirmation."
-      );
     } else {
       const testdata = `<API3G>
 <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
@@ -146,6 +144,12 @@ function BuyTicketModal() {
         })
         .catch((err) => console.log(err));
     }
+    setModalData({
+      firstname: "",
+      lastname: "",
+      email: "",
+      quantity: "",
+    });
   }
 
   useEffect(() => {
@@ -157,6 +161,11 @@ function BuyTicketModal() {
     if (gender == "male") {
       setButtonText("Buy a Ticket");
       document.getElementById("quantity").style.display = "block";
+    }
+    if (quantity) {
+      const newText = `Buy Ticket GHC${quantity * 200}`;
+      document.getElementById("buyButton").style.width = "200px";
+      setButtonText(newText);
     }
   });
   return (
@@ -190,7 +199,7 @@ function BuyTicketModal() {
                   type="text"
                   placeholder="Type your first name here"
                   className="w-100 inputs"
-                  required="true"
+                  required={true}
                 />
                 <input
                   name="lastname"
@@ -265,10 +274,12 @@ function BuyTicketModal() {
                 Cancel
               </button>
               <button
-                data-bs-dismiss="modal"
+                data-bs-toggle="modal"
+                data-bs-target="#successModal"
                 type="button"
                 class="btn btnSecondary"
                 onClick={handleSubmit}
+                id="buyButton"
               >
                 {buttonText}
               </button>
@@ -276,6 +287,7 @@ function BuyTicketModal() {
           </div>
         </div>
       </div>
+      <SuccessModal />
     </div>
   );
 }
