@@ -18,7 +18,7 @@ function BuyTicketModal() {
     { value: "fiji", label: "Fiji (Cabana) GH¢ 20,000" },
     { value: "fiji", label: "Aruba (Cabana) GH¢ 12,000" },
     { value: "borabora", label: "Bora Bora (Long Table) GH¢ 6,000" },
-    { value: "bali", label: "Bali (Round Table) GH¢ 3,000" },
+    { value: "bali", label: "Bali (Round Table) GH¢ 4,000" },
   ];
 
   const customStyles = {
