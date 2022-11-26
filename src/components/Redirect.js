@@ -60,19 +60,14 @@ function Redirect() {
               .post("http://localhost:3009/api/v1/email/confirmation", data)
               .then(function (res) {
                 console.log(res.data);
+                if (res.data.status == 200) {
+                  localStorage.removeItem("email");
+                }
               })
               .catch((err) => console.log(err));
-            console.log(
-              firstname,
-              lastname,
-              useremail,
-              paystatus,
-              paymentamount
-            );
           }
         });
-      })
-      .catch((err) => console.log(err));
+      });
   });
   return <div>Redirect Page</div>;
 }

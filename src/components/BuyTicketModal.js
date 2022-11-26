@@ -102,8 +102,8 @@ function BuyTicketModal() {
     <Transaction>
         <PaymentAmount>${amount}</PaymentAmount>
         <PaymentCurrency>tzs</PaymentCurrency>
-        <RedirectURL>http://www.dikinisland.com/redirect</RedirectURL>
-        <BackURL>http://www.dikinisland.com </BackURL>
+        <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
+        <BackURL>https://www.dikinisland.com </BackURL>
         <customerFirstName>${firstname}</customerFirstName>
         <customerLastName>${lastname}</customerLastName>
         <customerEmail>${email}</customerEmail>
