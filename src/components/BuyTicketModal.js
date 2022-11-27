@@ -5,6 +5,7 @@ import axios from "axios";
 import Select from "react-select";
 import xml2js from "xml2js";
 import SuccessModal from "./SuccessModal";
+import Loading from "./Loading";
 
 function BuyTicketModal() {
   const [buttonText, setButtonText] = useState("Buy a ticket");
@@ -59,7 +60,10 @@ function BuyTicketModal() {
     const amount = quantity * 200;
     const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
     const date = new Date();
-    if (buttonText == "RSVP") {
+    if (gender == "female") {
+      document.getElementById("quantity").style.display = "none";
+      console.log(gender);
+
       const data = {
         user: {
           firstName: `${firstname}`,
@@ -67,57 +71,35 @@ function BuyTicketModal() {
           email: `${email}`,
         },
       };
-      console.log(data);
       axios
         .post("https://api-dikinisland.onrender.com/api/v1/female/rsvp", data)
         .then(function (res) {
           console.log(res.data);
-          alert("RSVP CONFIRMED");
+          // alert("RSVP CONFIRMED");
         })
         .catch((err) => console.log(err));
       console.log(firstname, lastname, email);
     } else {
-      const testdata = `<API3G>
-<CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
-<Request>createToken</Request>
-<Transaction>
-    <PaymentAmount>300</PaymentAmount>
-    <PaymentCurrency>tzs</PaymentCurrency>
-    <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
-    <BackURL>http://www.domain.com/backurl.php </BackURL>
-    <customerFirstName>John</customerFirstName>
-    <customerLastName>Doe</customerLastName>
-    <customerEmail>test@directpayonline.com</customerEmail>
-</Transaction>
-<Services>
-  <Service>
-    <ServiceType>3854</ServiceType>
-    <ServiceDescription>Test Product</ServiceDescription>
-    <ServiceDate>2013/12/20 19:00</ServiceDate>
-  </Service>
-</Services>
-</API3G>`;
       const data = `<API3G>
-    <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
-    <Request>createToken</Request>
-    <Transaction>
-        <PaymentAmount>${amount}</PaymentAmount>
-        <PaymentCurrency>tzs</PaymentCurrency>
-        <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
-        <BackURL>https://www.dikinisland.com </BackURL>
-        <customerFirstName>${firstname}</customerFirstName>
-        <customerLastName>${lastname}</customerLastName>
-        <customerEmail>${email}</customerEmail>
-    </Transaction>
-    <Services>
-      <Service>
-        <ServiceType>3854</ServiceType>
-        <ServiceDescription>Test Product</ServiceDescription>
-        <ServiceDate>${dateFormat}</ServiceDate>
-      </Service>
-    </Services>
-    </API3G>`;
-
+        <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+        <Request>createToken</Request>
+        <Transaction>
+            <PaymentAmount>${amount}</PaymentAmount>
+            <PaymentCurrency>tzs</PaymentCurrency>
+            <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
+            <BackURL>https://www.dikinisland.com </BackURL>
+            <customerFirstName>${firstname}</customerFirstName>
+            <customerLastName>${lastname}</customerLastName>
+            <customerEmail>${email}</customerEmail>
+        </Transaction>
+        <Services>
+          <Service>
+            <ServiceType>3854</ServiceType>
+            <ServiceDescription>Test Product</ServiceDescription>
+            <ServiceDate>${dateFormat}</ServiceDate>
+          </Service>
+        </Services>
+      </API3G>`;
       const config = {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -145,22 +127,26 @@ function BuyTicketModal() {
         })
         .catch((err) => console.log(err));
     }
-    setModalData({
-      firstname: "",
-      lastname: "",
-      email: "",
-      quantity: "",
-    });
+    // setModalData({
+    //   firstname: "",
+    //   lastname: "",
+    //   email: "",
+    //   quantity: "",
+    // });
   }
 
   useEffect(() => {
     if (gender == "female") {
-      setButtonText("RSVP");
+      // setButtonText("RSVP");
       document.getElementById("quantity").style.display = "none";
+      document.getElementById("buyButton").style.display = "none";
+      document.getElementById("rsvpbutton").style.display = "block";
       //   console.log(document.getElementById("quantity"));
     }
     if (gender == "male") {
       setButtonText("Buy a Ticket");
+      document.getElementById("rsvpbutton").style.display = "none";
+      document.getElementById("buyButton").style.display = "block";
       document.getElementById("quantity").style.display = "block";
     }
     if (quantity) {
@@ -276,7 +262,17 @@ function BuyTicketModal() {
               </button>
               <button
                 data-bs-toggle="modal"
-                // data-bs-target="#successModal"
+                data-bs-target="#successModal"
+                type="button"
+                class="btn btnSecondary"
+                onClick={handleSubmit}
+                id="rsvpbutton"
+              >
+                RSVP
+              </button>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#loadingModal"
                 type="button"
                 class="btn btnSecondary"
                 onClick={handleSubmit}
@@ -289,6 +285,7 @@ function BuyTicketModal() {
         </div>
       </div>
       <SuccessModal />
+      <Loading />
     </div>
   );
 }
