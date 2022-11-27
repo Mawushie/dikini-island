@@ -72,6 +72,7 @@ function BuyTicketModal() {
         .post("http://localhost:3009/api/v1/female/rsvp", data)
         .then(function (res) {
           console.log(res.data);
+          alert("RSVP CONFIRMED");
         })
         .catch((err) => console.log(err));
       console.log(firstname, lastname, email);
@@ -275,7 +276,7 @@ function BuyTicketModal() {
               </button>
               <button
                 data-bs-toggle="modal"
-                data-bs-target="#successModal"
+                // data-bs-target="#successModal"
                 type="button"
                 class="btn btnSecondary"
                 onClick={handleSubmit}

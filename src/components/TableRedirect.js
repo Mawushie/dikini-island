@@ -5,7 +5,7 @@ import BuyTicketModal from "./BuyTicketModal";
 import TicketConfirmed from "./TicketConfirmed";
 import { useNavigate } from "react-router-dom";
 
-function Redirect() {
+function TableRedirect() {
   const navigate = useNavigate();
   const queryParams = new URLSearchParams(window.location.search);
   const TransactionToken = queryParams.get("TransactionToken");
@@ -45,12 +45,13 @@ function Redirect() {
             const firstname = localStorage.getItem("firstname");
             const lastname = localStorage.getItem("lastname");
             const useremail = localStorage.getItem("email");
-
+            const table = localStorage.getItem("table");
             const data = {
               user: {
                 firstName: `${firstname}`,
                 lastLame: `${lastname}`,
                 email: `${useremail}`,
+                table: `${table}`,
               },
               order: {
                 status: `${paystatus}`,
@@ -60,12 +61,12 @@ function Redirect() {
             console.log(data);
 
             axios
-              .post("http://localhost:3009/api/v1/email/confirmation", data)
+              .post("http://localhost:3009/api/v1/table/bought", data)
               .then(function (res) {
                 console.log(res.data);
                 if (res.data.status == 200) {
                   alert("successful");
-                  localStorage.clear();
+                  //   localStorage.clear();
                 }
               })
               .catch((err) => console.log(err));
@@ -76,4 +77,4 @@ function Redirect() {
   return <div>Loading.....</div>;
 }
 
-export default Redirect;
+export default TableRedirect;

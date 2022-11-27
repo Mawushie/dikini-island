@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-function SuccessModal() {
+function Loading() {
   return (
     <div>
       <div
-        class="modal fade successModal"
-        id="successModal"
+        class="modal fade"
+        id="loadingModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -13,9 +13,6 @@ function SuccessModal() {
         <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable ">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                RSVP(Ladies)
-              </h5>
               <button
                 type="button"
                 class="btn-close"
@@ -23,9 +20,7 @@ function SuccessModal() {
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              Ticket Reserved. Check your email for confirmation.
-            </div>
+            <div class="modal-body">Please wait....</div>
           </div>
         </div>
       </div>
@@ -33,4 +28,4 @@ function SuccessModal() {
   );
 }
 
-export default SuccessModal;
+export default Loading;

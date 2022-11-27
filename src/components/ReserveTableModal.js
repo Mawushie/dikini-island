@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import Moment from "moment";
 import axios from "axios";
+import xml2js from "xml2js";
 import Select from "react-select";
 import TableSuccess from "./TableSuccess";
 
@@ -60,12 +61,29 @@ function ReserveTableModal() {
 
   //   console.log(gender);
   function handleSubmit() {
-    const amount = quantity * 200;
+    localStorage.setItem("firstname", `${firstname}`);
+    localStorage.setItem("lastname", `${lastname}`);
+    localStorage.setItem("email", `${email}`);
+    localStorage.setItem("table", `${table}`);
+    var amount;
+    if (table == "Fiji (Cabana) GH¢ 20,000") {
+      amount = "20000";
+    }
+    if (table == "Aruba (Cabana) GH¢ 12,000") {
+      amount = "12000";
+    }
+    if (table == "Bora Bora (Long Table) GH¢ 6,000") {
+      amount = "6000";
+    }
+    if (table == "Bali (Round Table) GH¢ 4,000") {
+      amount = "400";
+    }
+
     const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
     const date = new Date();
     const tableReserveData = {
       user: {
-        firstname: firstname,
+        firstName: firstname,
         lastname: lastname,
         email: email,
         table: table,
@@ -76,25 +94,25 @@ function ReserveTableModal() {
 <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
 <Request>createToken</Request>
 <Transaction>
-    <PaymentAmount>300</PaymentAmount>
+    <PaymentAmount>${amount}</PaymentAmount>
     <PaymentCurrency>tzs</PaymentCurrency>
-    <RedirectURL>http://www.domain.com/payurl.php</RedirectURL>
-    <BackURL>http://www.domain.com/backurl.php </BackURL>
-    <customerFirstName>John</customerFirstName>
-    <customerLastName>Doe</customerLastName>
-    <customerEmail>test@directpayonline.com</customerEmail>
+    <RedirectURL>https://dikinisland.com/tableredirect</RedirectURL>
+    <BackURL>https://dikinisland.com </BackURL>
+    <customerFirstName>${firstname}</customerFirstName>
+    <customerLastName>${lastname}</customerLastName>
+    <customerEmail>${email}</customerEmail>
 </Transaction>
 <Services>
   <Service>
     <ServiceType>3854</ServiceType>
     <ServiceDescription>Test Product</ServiceDescription>
-    <ServiceDate>2013/12/20 19:00</ServiceDate>
+    <ServiceDate>${dateFormat}</ServiceDate>
   </Service>
 </Services>
 </API3G>`;
 
     console.log(testdata);
-
+    let parser = new xml2js.Parser();
     axios
       .post(
         "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
@@ -106,7 +124,18 @@ function ReserveTableModal() {
           "Access-Control-Allow-Credentials": "true",
         }
       )
-      .then((res) => console.log(res.data))
+      .then(function (res) {
+        parser.parseString(res.data, function (err, result) {
+          console.log(result.API3G.Result[0]);
+          if (result.API3G.Result[0] == "000") {
+            console.log("yaaa");
+            window.open(
+              ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
+              "_self"
+            );
+          }
+        });
+      })
       .catch((err) => console.log(err));
   }
   const handleReserve = () => {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "../pages/Index";
 import PaymentCorfirmed from "../pages/PaymentCorfirmed";
 import Redirect from "./Redirect";
+import TableRedirect from "./TableRedirect";
 
 function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ function AppRoutes() {
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route path="/redirect" element={<Redirect />} />
+          <Route path="/tableredirect" element={<TableRedirect />} />
           <Route path="/confirmed" element={<PaymentCorfirmed />} />
         </Routes>
       </BrowserRouter>
