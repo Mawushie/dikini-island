@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import xml2js from "xml2js";
-import BuyTicketModal from "./BuyTicketModal";
-import TicketConfirmed from "./TicketConfirmed";
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 function TableRedirect() {
@@ -68,8 +67,8 @@ function TableRedirect() {
               .then(function (res) {
                 console.log(res.data);
                 if (res.data.status == 200) {
-                  alert("successful");
-                  //   localStorage.clear();
+                  document.getElementById("confirmed").style.display = "block";
+                  localStorage.clear();
                 }
               })
               .catch((err) => console.log(err));
@@ -77,7 +76,38 @@ function TableRedirect() {
         });
       });
   });
-  return <div>Loading.....</div>;
+  return (
+    <div>
+      {" "}
+      <Div>
+        <div className="mb-5">
+          {" "}
+          <img src="./images/logo3.png" />
+        </div>
+
+        <h3>Please wait.</h3>
+        <div id="confirmed">
+          {" "}
+          <Div style={{ textAlign: "center" }}>
+            <h3 id="confirmed">Payment Confirmed.</h3>
+            <h3>Please check your email for confirmation.</h3>
+            <h3 className="mb-4">Thank You</h3>
+
+            <button className="btnSecondary" onClick={() => navigate("/")}>
+              Okay
+            </button>
+          </Div>
+        </div>
+      </Div>
+    </div>
+  );
 }
 
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+`;
 export default TableRedirect;

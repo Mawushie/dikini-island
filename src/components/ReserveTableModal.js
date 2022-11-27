@@ -5,6 +5,7 @@ import axios from "axios";
 import xml2js from "xml2js";
 import Select from "react-select";
 import TableSuccess from "./TableSuccess";
+import Loading from "./Loading";
 
 function ReserveTableModal() {
   const [buttonText, setButtonText] = useState("Buy table");
@@ -262,6 +263,8 @@ function ReserveTableModal() {
               <button
                 type="button"
                 class="btn btnSecondary"
+                data-bs-toggle="modal"
+                data-bs-target="#loadingModal"
                 onClick={handleSubmit}
               >
                 {buttonText}
@@ -271,6 +274,7 @@ function ReserveTableModal() {
         </div>
       </div>
       <TableSuccess />
+      <Loading />
     </div>
   );
 }
