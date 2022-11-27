@@ -61,7 +61,10 @@ function TableRedirect() {
             console.log(data);
 
             axios
-              .post("http://localhost:3009/api/v1/table/bought", data)
+              .post(
+                "https://api-dikinisland.onrender.com/api/v1/table/bought",
+                data
+              )
               .then(function (res) {
                 console.log(res.data);
                 if (res.data.status == 200) {

@@ -69,7 +69,7 @@ function BuyTicketModal() {
       };
       console.log(data);
       axios
-        .post("http://localhost:3009/api/v1/female/rsvp", data)
+        .post("https://api-dikinisland.onrender.com/api/v1/female/rsvp", data)
         .then(function (res) {
           console.log(res.data);
           alert("RSVP CONFIRMED");

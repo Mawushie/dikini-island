@@ -149,7 +149,10 @@ function ReserveTableModal() {
       },
     };
     axios
-      .post("http://localhost:3009/api/v1/table/reserve", reserveData)
+      .post(
+        "https://api-dikinisland.onrender.com/api/v1/table/reserve",
+        reserveData
+      )
       .then(function (res) {
         console.log(res.data);
       })

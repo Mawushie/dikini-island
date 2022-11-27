@@ -60,7 +60,10 @@ function Redirect() {
             console.log(data);
 
             axios
-              .post("http://localhost:3009/api/v1/email/confirmation", data)
+              .post(
+                "https://api-dikinisland.onrender.com/api/v1/email/confirmation",
+                data
+              )
               .then(function (res) {
                 console.log(res.data);
                 if (res.data.status == 200) {
