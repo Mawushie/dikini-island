@@ -15,27 +15,27 @@ import ReserveTableModal from "../components/ReserveTableModal";
 import SuccessModal from "../components/SuccessModal";
 import Carousel from "react-bootstrap/Carousel";
 function Index() {
-  // useEffect(() => {
-  //   const images = [
-  //     "url('./images/background3.png')",
-  //     "url('./images/backgroundlg.png')",
-  //     "url('./images/background1.png')",
-  //     "url('./images/background2.png')",
-  //     "url('./images/background4.png')",
-  //   ];
-  //   var count = 0;
-  //   const backgroundSlider = document.getElementById("header");
-  //   backgroundSlider.style.backgroundImage = images[4];
-  //   const interval = setInterval(function () {
-  //     backgroundSlider.style.backgroundImage = images[count];
-  //     count = count + 1;
-  //     if (count == images.length) {
-  //       count = 0;
-  //     }
-  //     // console.log(backgroundSlider);
-  //   }, 10000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const images = [
+      "url('./images/background3.png')",
+      "url('./images/backgroundlg.png')",
+      // "url('./images/background1.png')",
+      "url('./images/background2.png')",
+      "url('./images/background4.png')",
+    ];
+    var count = 0;
+    const backgroundSlider = document.getElementById("header");
+    backgroundSlider.style.backgroundImage = images[4];
+    const interval = setInterval(function () {
+      backgroundSlider.style.backgroundImage = images[count];
+      count = count + 1;
+      if (count == images.length) {
+        count = 0;
+      }
+      // console.log(backgroundSlider);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -101,8 +101,114 @@ function Index() {
             </div>
           </div>
         </nav>
+        {/* <Carousel controls={false} indicators={false}>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/background2.png"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <div className="content">
+                <div id="logo2">
+                  <img
+                    src="./images/logo2.png"
+                    alt="logo2"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <div id="ticket">
+                  {" "}
+                  <button
+                    className="btnSecondary headerbtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buyTicketModal"
+                    id="hero-btn"
+                  >
+                    Grab a ticket
+                  </button>
+                </div>
 
-        {/* <div className="content">
+                <p className="secret">Whatever Happens On The Island</p>
+                <p className="secret">Stays On The Island</p>
+                <p className="secret">17th December, 2022</p>
+                <p className="secret">The Platinum Bay Hotel</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/background3.png"
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <div className="content">
+                <div id="logo2">
+                  <img
+                    src="./images/logo2.png"
+                    alt="logo2"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <div id="ticket">
+                  <button
+                    className="btnSecondary headerbtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buyTicketModal"
+                    id="hero-btn"
+                  >
+                    Grab a ticket
+                  </button>
+                </div>
+
+                <p className="secret">Whatever Happens On The Island</p>
+                <p className="secret">Stays On The Island</p>
+                <p className="secret">17th December, 2022</p>
+                <p className="secret">The Platinum Bay Hotel</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/backgroundlg.png"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <div className="content">
+                <div id="logo2">
+                  <img
+                    src="./images/logo2.png"
+                    alt="logo2"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <div id="ticket">
+                  {" "}
+                  <button
+                    className="btnSecondary headerbtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buyTicketModal"
+                    id="hero-btn"
+                  >
+                    Grab a ticket
+                  </button>
+                </div>
+
+                <p className="secret">Whatever Happens On The Island</p>
+                <p className="secret">Stays On The Island</p>
+                <p className="secret">17th December, 2022</p>
+                <p className="secret">The Platinum Bay Hotel</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel> */}
+        <div className="content">
           <div id="logo2">
             <img src="./images/logo2.png" alt="logo2" />
           </div>
@@ -122,115 +228,8 @@ function Index() {
           <p className="secret">Stays On The Island</p>
           <p className="secret">17th December, 2022</p>
           <p className="secret">The Platinum Bay Hotel</p>
-        </div> */}
+        </div>
       </div>
-      <Carousel controls={false} indicators={false}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/background2.png"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <div className="content">
-              <div id="logo2">
-                <img
-                  src="./images/logo2.png"
-                  alt="logo2"
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div id="ticket">
-                {" "}
-                <button
-                  className="btnSecondary headerbtn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#buyTicketModal"
-                  id="hero-btn"
-                >
-                  Grab a ticket
-                </button>
-              </div>
-
-              <p className="secret">Whatever Happens On The Island</p>
-              <p className="secret">Stays On The Island</p>
-              <p className="secret">17th December, 2022</p>
-              <p className="secret">The Platinum Bay Hotel</p>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/background3.png"
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <div className="content">
-              <div id="logo2">
-                <img
-                  src="./images/logo2.png"
-                  alt="logo2"
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div id="ticket">
-                <button
-                  className="btnSecondary headerbtn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#buyTicketModal"
-                  id="hero-btn"
-                >
-                  Grab a ticket
-                </button>
-              </div>
-
-              <p className="secret">Whatever Happens On The Island</p>
-              <p className="secret">Stays On The Island</p>
-              <p className="secret">17th December, 2022</p>
-              <p className="secret">The Platinum Bay Hotel</p>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./images/backgroundlg.png"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <div className="content">
-              <div id="logo2">
-                <img
-                  src="./images/logo2.png"
-                  alt="logo2"
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div id="ticket">
-                {" "}
-                <button
-                  className="btnSecondary headerbtn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#buyTicketModal"
-                  id="hero-btn"
-                >
-                  Grab a ticket
-                </button>
-              </div>
-
-              <p className="secret">Whatever Happens On The Island</p>
-              <p className="secret">Stays On The Island</p>
-              <p className="secret">17th December, 2022</p>
-              <p className="secret">The Platinum Bay Hotel</p>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
 
       <div className="description" id="about">
         <div>
