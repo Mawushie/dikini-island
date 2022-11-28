@@ -332,22 +332,22 @@ function BuyTicketModal() {
               >
                 {buttonText}
               </button>
-              <a
+              {/* <a
                 href="https://shop.directpay.online/paymybills/THEPLATINUMBAYHOTEL"
                 // target="_blank"
                 className="buyLink"
+              > */}
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#loadingModal"
+                type="button"
+                class="btn btnSecondary"
+                onClick={handleSubmit}
+                id="buyButton2"
               >
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#loadingModal"
-                  type="button"
-                  class="btn btnSecondary"
-                  onClick={handleSubmit}
-                  id="buyButton2"
-                >
-                  {buttonText}
-                </button>
-              </a>
+                {buttonText}
+              </button>
+              {/* </a> */}
             </div>
           </div>
         </div>
