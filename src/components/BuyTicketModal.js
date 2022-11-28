@@ -11,7 +11,8 @@ function BuyTicketModal() {
   const [buttonText, setButtonText] = useState("Buy a ticket");
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
-
+  const [errorText, setErrorText] = useState("");
+  const [checked, setChecked] = useState(false);
   const [modalData, setModalData] = useState({
     firstname: "",
     lastname: "",
@@ -53,7 +54,49 @@ function BuyTicketModal() {
     setGender(event.value);
   };
   //   console.log(gender);
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!firstname) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+    if (!lastname) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+    if (!email) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+    if (!phone) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+    if (!gender) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+    if (!quantity) {
+      setErrorText("Please fill in all details");
+      return;
+    } else {
+      setErrorText("");
+    }
+
+    setChecked(true);
+    document
+      .getElementById("buyButton")
+      .setAttribute("data-bs-target", "#loadingModal");
     localStorage.setItem("firstname", `${firstname}`);
     localStorage.setItem("lastname", `${lastname}`);
     localStorage.setItem("email", `${email}`);
@@ -62,8 +105,6 @@ function BuyTicketModal() {
     const date = new Date();
     if (gender == "female") {
       document.getElementById("quantity").style.display = "none";
-      console.log(gender);
-
       const data = {
         user: {
           firstName: `${firstname}`,
@@ -107,25 +148,25 @@ function BuyTicketModal() {
         },
       };
       let parser = new xml2js.Parser();
-      axios
-        .post(
-          "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
-          data,
-          config
-        )
-        .then(function (res) {
-          parser.parseString(res.data, function (err, result) {
-            console.log(result.API3G.Result[0]);
-            if (result.API3G.Result[0] == "000") {
-              console.log("yaaa");
-              window.open(
-                ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
-                "_self"
-              );
-            }
-          });
-        })
-        .catch((err) => console.log(err));
+      // axios
+      //   .post(
+      //     "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+      //     data,
+      //     config
+      //   )
+      //   .then(function (res) {
+      //     parser.parseString(res.data, function (err, result) {
+      //       console.log(result.API3G.Result[0]);
+      //       if (result.API3G.Result[0] == "000") {
+      //         console.log("yaaa");
+      //         window.open(
+      //           ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
+      //           "_self"
+      //         );
+      //       }
+      //     });
+      //   })
+      //   .catch((err) => console.log(err));
     }
     // setModalData({
     //   firstname: "",
@@ -154,6 +195,15 @@ function BuyTicketModal() {
       document.getElementById("buyButton").style.width = "200px";
       setButtonText(newText);
     }
+    if ((firstname, lastname, email, phone, gender, quantity)) {
+      setChecked(true);
+    }
+    if (checked == true) {
+      // console.log("yess");
+      document.getElementById("buyButton").style.display = "none";
+      document.getElementById("buyButton2").style.display = "block";
+      document.getElementById("buyButton2").style.width = "200px";
+    }
   });
   return (
     <div>
@@ -178,6 +228,7 @@ function BuyTicketModal() {
               ></button>
             </div>
             <div class="modal-body">
+              <p className="errorText mb-2 mx-2">{errorText}</p>
               <form onSubmit={handleSubmit}>
                 <input
                   name="firstname"
@@ -271,12 +322,20 @@ function BuyTicketModal() {
                 RSVP
               </button>
               <button
+                type="button"
+                class="btn btnSecondary"
+                onClick={handleSubmit}
+                id="buyButton"
+              >
+                {buttonText}
+              </button>
+              <button
                 data-bs-toggle="modal"
                 data-bs-target="#loadingModal"
                 type="button"
                 class="btn btnSecondary"
                 onClick={handleSubmit}
-                id="buyButton"
+                id="buyButton2"
               >
                 {buttonText}
               </button>
