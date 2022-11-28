@@ -110,7 +110,7 @@ function BuyTicketModal() {
       const data = {
         user: {
           firstName: `${firstname}`,
-          lastLame: `${lastname}`,
+          lastName: `${lastname}`,
           email: `${email}`,
         },
       };
@@ -342,7 +342,7 @@ function BuyTicketModal() {
                   data-bs-target="#loadingModal"
                   type="button"
                   class="btn btnSecondary"
-                  // onClick={handleSubmit}
+                  onClick={handleSubmit}
                   id="buyButton2"
                 >
                   {buttonText}
