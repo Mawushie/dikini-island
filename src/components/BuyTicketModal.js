@@ -148,25 +148,25 @@ function BuyTicketModal() {
         },
       };
       let parser = new xml2js.Parser();
-      // axios
-      //   .post(
-      //     "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
-      //     data,
-      //     config
-      //   )
-      //   .then(function (res) {
-      //     parser.parseString(res.data, function (err, result) {
-      //       console.log(result.API3G.Result[0]);
-      //       if (result.API3G.Result[0] == "000") {
-      //         console.log("yaaa");
-      //         window.open(
-      //           ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
-      //           "_self"
-      //         );
-      //       }
-      //     });
-      //   })
-      //   .catch((err) => console.log(err));
+      axios
+        .post(
+          "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+          data,
+          config
+        )
+        .then(function (res) {
+          parser.parseString(res.data, function (err, result) {
+            console.log(result.API3G.Result[0]);
+            if (result.API3G.Result[0] == "000") {
+              console.log("yaaa");
+              window.open(
+                ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
+                "_self"
+              );
+            }
+          });
+        })
+        .catch((err) => console.log(err));
     }
     // setModalData({
     //   firstname: "",
