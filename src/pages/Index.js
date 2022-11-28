@@ -15,27 +15,27 @@ import ReserveTableModal from "../components/ReserveTableModal";
 import SuccessModal from "../components/SuccessModal";
 import Carousel from "react-bootstrap/Carousel";
 function Index() {
-  useEffect(() => {
-    const images = [
-      "url('./images/background3.png')",
-      "url('./images/backgroundlg.png')",
-      // "url('./images/background1.png')",
-      "url('./images/background2.png')",
-      "url('./images/background4.png')",
-    ];
-    var count = 0;
-    const backgroundSlider = document.getElementById("header");
-    backgroundSlider.style.backgroundImage = images[4];
-    const interval = setInterval(function () {
-      backgroundSlider.style.backgroundImage = images[count];
-      count = count + 1;
-      if (count == images.length) {
-        count = 0;
-      }
-      // console.log(backgroundSlider);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const images = [
+  //     "url('./images/background3.png')",
+  //     "url('./images/backgroundlg.png')",
+  //     // "url('./images/background1.png')",
+  //     "url('./images/background2.png')",
+  //     "url('./images/background4.png')",
+  //   ];
+  //   var count = 0;
+  //   const backgroundSlider = document.getElementById("header");
+  //   backgroundSlider.style.backgroundImage = images[4];
+  //   const interval = setInterval(function () {
+  //     backgroundSlider.style.backgroundImage = images[count];
+  //     count = count + 1;
+  //     if (count == images.length) {
+  //       count = 0;
+  //     }
+  //     // console.log(backgroundSlider);
+  //   }, 10000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div>

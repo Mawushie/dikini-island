@@ -88,14 +88,14 @@ function BuyTicketModal() {
     } else {
       setErrorText("");
     }
-    if (!quantity) {
-      setErrorText("Please fill in all details");
-      return;
-    } else {
-      setErrorText("");
-    }
+    // if (!quantity) {
+    //   setErrorText("Please fill in all details");
+    //   return;
+    // } else {
+    //   setErrorText("");
+    // }
 
-    setChecked(true);
+    // setChecked(true);
     document
       .getElementById("buyButton")
       .setAttribute("data-bs-target", "#loadingModal");
@@ -114,13 +114,14 @@ function BuyTicketModal() {
           email: `${email}`,
         },
       };
+      console.log(data);
       axios
         .post("https://api-dikinisland.onrender.com/api/v1/female/rsvp", data)
         .then(function (res) {
           console.log(res.data);
           // alert("RSVP CONFIRMED");
-        })
-        .catch((err) => console.log(err));
+        });
+      console.log("mmmmmm").catch((err) => console.log(err));
       console.log(firstname, lastname, email);
     } else {
       // const data = `<API3G>
