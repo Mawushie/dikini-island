@@ -260,15 +260,20 @@ function ReserveTableModal() {
               >
                 Reserve table
               </button>
-              <button
-                type="button"
-                class="btn btnSecondary"
-                data-bs-toggle="modal"
-                data-bs-target="#loadingModal"
-                onClick={handleSubmit}
+              <a
+                href="https://shop.directpay.online/paymybills/THEPLATINUMBAYHOTEL"
+                className="buyLink"
               >
-                {buttonText}
-              </button>
+                <button
+                  type="button"
+                  class="btn btnSecondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loadingModal"
+                  // onClick={handleSubmit}
+                >
+                  {buttonText}
+                </button>
+              </a>
             </div>
           </div>
         </div>
