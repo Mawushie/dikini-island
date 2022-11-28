@@ -124,52 +124,52 @@ function BuyTicketModal() {
       console.log("mmmmmm").catch((err) => console.log(err));
       console.log(firstname, lastname, email);
     } else {
-      const data = `<API3G>
-        <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
-        <Request>createToken</Request>
-        <Transaction>
-            <PaymentAmount>${amount}</PaymentAmount>
-            <PaymentCurrency>tzs</PaymentCurrency>
-            <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
-            <BackURL>https://www.dikinisland.com </BackURL>
-            <customerFirstName>${firstname}</customerFirstName>
-            <customerLastName>${lastname}</customerLastName>
-            <customerEmail>${email}</customerEmail>
-        </Transaction>
-        <Services>
-          <Service>
-            <ServiceType>3854</ServiceType>
-            <ServiceDescription>Test Product</ServiceDescription>
-            <ServiceDate>${dateFormat}</ServiceDate>
-          </Service>
-        </Services>
-      </API3G>`;
-      const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "text/xml",
-        },
-      };
-      let parser = new xml2js.Parser();
-      axios
-        .post(
-          "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
-          data,
-          config
-        )
-        .then(function (res) {
-          parser.parseString(res.data, function (err, result) {
-            console.log(result.API3G.Result[0]);
-            if (result.API3G.Result[0] == "000") {
-              console.log("yaaa");
-              window.open(
-                ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
-                "_self"
-              );
-            }
-          });
-        })
-        .catch((err) => console.log(err));
+      // const data = `<API3G>
+      //   <CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+      //   <Request>createToken</Request>
+      //   <Transaction>
+      //       <PaymentAmount>${amount}</PaymentAmount>
+      //       <PaymentCurrency>tzs</PaymentCurrency>
+      //       <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
+      //       <BackURL>https://www.dikinisland.com </BackURL>
+      //       <customerFirstName>${firstname}</customerFirstName>
+      //       <customerLastName>${lastname}</customerLastName>
+      //       <customerEmail>${email}</customerEmail>
+      //   </Transaction>
+      //   <Services>
+      //     <Service>
+      //       <ServiceType>3854</ServiceType>
+      //       <ServiceDescription>Test Product</ServiceDescription>
+      //       <ServiceDate>${dateFormat}</ServiceDate>
+      //     </Service>
+      //   </Services>
+      // </API3G>`;
+      // const config = {
+      //   headers: {
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Content-Type": "text/xml",
+      //   },
+      // };
+      // let parser = new xml2js.Parser();
+      // axios
+      //   .post(
+      //     "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+      //     data,
+      //     config
+      //   )
+      //   .then(function (res) {
+      //     parser.parseString(res.data, function (err, result) {
+      //       console.log(result.API3G.Result[0]);
+      //       if (result.API3G.Result[0] == "000") {
+      //         console.log("yaaa");
+      //         window.open(
+      //           ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
+      //           "_self"
+      //         );
+      //       }
+      //     });
+      //   })
+      //   .catch((err) => console.log(err));
     }
     // setModalData({
     //   firstname: "",
@@ -332,22 +332,22 @@ function BuyTicketModal() {
               >
                 {buttonText}
               </button>
-              {/* <a
+              <a
                 href="https://shop.directpay.online/paymybills/THEPLATINUMBAYHOTEL"
                 // target="_blank"
                 className="buyLink"
-              > */}
-              <button
-                data-bs-toggle="modal"
-                data-bs-target="#loadingModal"
-                type="button"
-                class="btn btnSecondary"
-                onClick={handleSubmit}
-                id="buyButton2"
               >
-                {buttonText}
-              </button>
-              {/* </a> */}
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#loadingModal"
+                  type="button"
+                  class="btn btnSecondary"
+                  // onClick={handleSubmit}
+                  id="buyButton2"
+                >
+                  {buttonText}
+                </button>
+              </a>
             </div>
           </div>
         </div>
