@@ -123,6 +123,9 @@ body {
     font-style: normal;
     margin-bottom: 40px;
   }
+  @media screen and (min-width: 1280px) {
+    justify-content: center;
+  }
 }
 
 .description {

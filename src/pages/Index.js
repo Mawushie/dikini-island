@@ -208,7 +208,7 @@ function Index() {
               </div>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          {/* <Carousel.Item>
             <img
               className="d-block w-100"
               src="./images/background4.png"
@@ -242,7 +242,7 @@ function Index() {
                 <p className="secret">The Platinum Bay Hotel</p>
               </div>
             </Carousel.Caption>
-          </Carousel.Item>
+          </Carousel.Item> */}
         </Carousel>
         {/* <div className="content">
           <div id="logo2">
