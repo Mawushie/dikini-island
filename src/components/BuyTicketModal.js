@@ -194,7 +194,7 @@ function BuyTicketModal() {
       document.getElementById("quantity").style.display = "block";
     }
     if (quantity) {
-      const newText = `Buy Ticket GHC${quantity * 200}`;
+      const newText = `Buy Ticket GH₵${quantity * 200}`;
       document.getElementById("buyButton").style.width = "200px";
       setButtonText(newText);
     }

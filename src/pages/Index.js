@@ -40,7 +40,7 @@ function Index() {
   return (
     <div>
       <div className="header" id="header">
-        <nav className="navbar navbar-expand-md navbar-light ">
+        <nav className="navbar navbar-expand-md  ">
           <div className="container">
             <a className="navbar-brand" href="#intro">
               <img src="./images/logo1.png" alt="navlogo" />
@@ -101,11 +101,11 @@ function Index() {
             </div>
           </div>
         </nav>
-        {/* <Carousel controls={false} indicators={false}>
+        <Carousel controls={false} indicators={false}>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./images/background2.png"
+              src="./images/background4.png"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -114,7 +114,7 @@ function Index() {
                   <img
                     src="./images/logo2.png"
                     alt="logo2"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "contain", height: "auto" }}
                   />
                 </div>
                 <div id="ticket">
@@ -142,6 +142,7 @@ function Index() {
               className="d-block w-100"
               src="./images/background3.png"
               alt="Second slide"
+              id="secondslide"
             />
 
             <Carousel.Caption>
@@ -150,7 +151,7 @@ function Index() {
                   <img
                     src="./images/logo2.png"
                     alt="logo2"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "contain", height: "auto" }}
                   />
                 </div>
                 <div id="ticket">
@@ -175,7 +176,7 @@ function Index() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./images/backgroundlg.png"
+              src="./images/background2.png"
               alt="Third slide"
             />
 
@@ -185,7 +186,7 @@ function Index() {
                   <img
                     src="./images/logo2.png"
                     alt="logo2"
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "contain", height: "auto" }}
                   />
                 </div>
                 <div id="ticket">
@@ -207,8 +208,43 @@ function Index() {
               </div>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel> */}
-        <div className="content">
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="./images/backgroundlg.png"
+              alt="Forth slide"
+            />
+
+            <Carousel.Caption>
+              <div className="content">
+                <div id="logo2">
+                  <img
+                    src="./images/logo2.png"
+                    alt="logo2"
+                    style={{ objectFit: "contain", height: "auto" }}
+                  />
+                </div>
+                <div id="ticket">
+                  {" "}
+                  <button
+                    className="btnSecondary headerbtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#buyTicketModal"
+                    id="hero-btn"
+                  >
+                    Grab a ticket
+                  </button>
+                </div>
+
+                <p className="secret">Whatever Happens On The Island</p>
+                <p className="secret">Stays On The Island</p>
+                <p className="secret">17th December, 2022</p>
+                <p className="secret">The Platinum Bay Hotel</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+        {/* <div className="content">
           <div id="logo2">
             <img src="./images/logo2.png" alt="logo2" />
           </div>
@@ -228,7 +264,7 @@ function Index() {
           <p className="secret">Stays On The Island</p>
           <p className="secret">17th December, 2022</p>
           <p className="secret">The Platinum Bay Hotel</p>
-        </div>
+        </div> */}
       </div>
 
       <div className="description" id="about">
@@ -236,17 +272,17 @@ function Index() {
           <p className="details secret">Whatever Happens On The Island,</p>
           <p className="secret">Stays On The Island!</p>
           <p className="details mx-4">
-            The most Elite Beach, Pool & Indoor Parties Happening On The Hills
-            of Aburi.
+            The Most Elite Beach, Pool & Indoor Parties Happening On The Hills
           </p>
           <p className="details mx-4">
-            Three Parties, One night - There's No Limitation To What You'll Get
-            Into...
+            Three Parties, One night ! The Possibilities Are ENDLESS
           </p>
-          <p className="details mx-4">The Possibilities are ENDLESS</p>
+          <p className="details mx-4">
+            See You On 17th December At The Platinum Bay Hotel
+          </p>
 
-          <p className="m-4">
-            See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
+          <p className="details mx-4">
+            Remember, Whatever Happens On The Island, Stays On The Island
           </p>
           <button
             className="btnSecondary"

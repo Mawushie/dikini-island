@@ -10,11 +10,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.56) 100%
-    ),
-    url("../../public/images/backgroundlg.png");
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.56) 100%
+  );
+  // url("../../public/images/backgroundlg.png")
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,6 +35,10 @@ body {
   //   }
 }
 
+.navbar {
+  background-color: white !important;
+}
+
 .header-text {
   font-family: "Pacifico", cursive;
   font-size: 40px;
@@ -49,7 +53,7 @@ body {
     align-items: center;
   }
   a {
-    color: white;
+    color: #1e1e1e;
     font-family: "Figtree", sans-serif;
     font-size: 18px;
     line-height: 22px;
@@ -100,7 +104,7 @@ body {
     /* or 120% */
     text-align: center;
     color: #ffffff;
-    display: block;
+    display: none;
     @media screen and (max-width: 768px) {
       font-size: 36px;
       line-height: 48px;
@@ -109,7 +113,7 @@ body {
   }
   .headerbtn {
     margin-bottom: 20px;
-    display: none;
+    display: block;
     @media screen and (max-width: 768px) {
       display: flex;
     }
@@ -128,9 +132,9 @@ body {
   align-items: center;
   font-family: "Figtree";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
-  color: #525252;
+  color: #1e1e1e;
   div {
     p {
       text-align: center;
@@ -145,11 +149,11 @@ body {
     align-items: center;
   }
   .details {
-    margin-bottom: 0px;
+    margin-bottom: 16px;
   }
   @media screen and (max-width: 400px) {
     // margin-top: 48px;
-    font-size: 14px;
+    font-size: 16px;
   }
   .secret {
     text-align: center;
@@ -157,7 +161,7 @@ body {
     display: none;
     @media screen and (max-width: 400px) {
       font-size: 14px;
-      display: flex;
+      display: none;
     }
   }
 }
@@ -444,7 +448,14 @@ option {
 .carousel-item img {
   width: 100%;
   object-fit: cover;
+  //   height: 70vh;
   @media screen and (max-width: 768px) {
-    height: 500px;
+    height: 80vh;
+  }
+  //   @media screen and (min-width: 1280px) {
+  //     height: 80vh;
+  //   }
+  #secondslide {
+    height: 100vh;
   }
 }
