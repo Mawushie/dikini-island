@@ -79,7 +79,7 @@ function Index() {
                   </a>
                 </li>
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a
                     className="nav-link"
                     href="https://swimsbydidi.com/"
@@ -87,7 +87,7 @@ function Index() {
                   >
                     Shop Dikinis
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <button
                     className="navBtn"
@@ -236,18 +236,15 @@ function Index() {
           <p className="details secret">Whatever Happens On The Island,</p>
           <p className="secret">Stays On The Island!</p>
           <p className="details mx-4">
-            Bringing You The Very First Island Party Experience Here In Ghana.
+            The most Elite Beach, Pool & Indoor Parties Happening On The Hills
+            of Aburi.
           </p>
           <p className="details mx-4">
-            The Best Beach And Pool Parties Will Be Happening Right Here On The
-            Island As Well
+            Three Parties, One night - There's No Limitation To What You'll Get
+            Into...
           </p>
-          <p className="details mx-4">
-            An Indoor Club Later In The Night. Three Parties In One!
-          </p>
-          <p className="details mx-4 ">
-            It’s All About Unlimited And Non Stop Vibes.
-          </p>
+          <p className="details mx-4">The Possibilities are ENDLESS</p>
+
           <p className="m-4">
             See You On 17th December, 2022 2:00 PM At The Platinum Bay Hotel
           </p>
@@ -273,9 +270,9 @@ function Index() {
 
       <div className="shop ">
         <p>Shop the dikinis</p>
-        <a class="nav-link" href="https://swimsbydidi.com/" target="_blank">
+        {/* <a class="nav-link" href="https://swimsbydidi.com/" target="_blank">
           <button className="btnPrimary">Visit shop</button>
-        </a>
+        </a> */}
       </div>
       <div className="modelSection mx-4">
         <div className="models">
