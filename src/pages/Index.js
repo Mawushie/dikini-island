@@ -269,7 +269,7 @@ function Index() {
       </div>
 
       <div className="shop ">
-        <p>Shop the dikinis</p>
+        <p>Dikinis</p>
         {/* <a class="nav-link" href="https://swimsbydidi.com/" target="_blank">
           <button className="btnPrimary">Visit shop</button>
         </a> */}
