@@ -105,7 +105,7 @@ function Index() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./images/background4.png"
+              src="./images/backgroundlg.png"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -211,7 +211,7 @@ function Index() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./images/backgroundlg.png"
+              src="./images/background4.png"
               alt="Forth slide"
             />
 
