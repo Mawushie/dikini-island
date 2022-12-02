@@ -129,7 +129,7 @@ function BuyTicketModal() {
         <CompanyToken>342D7169-FD79-4159-87F8-77642BCF0D88</CompanyToken>
         <Request>createToken</Request>
         <Transaction>
-            <PaymentAmount>1</PaymentAmount>
+            <PaymentAmount>${amount}</PaymentAmount>
             <PaymentCurrency>ghs</PaymentCurrency>
             <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
             <BackURL>https://www.dikinisland.com </BackURL>
@@ -159,7 +159,7 @@ function BuyTicketModal() {
           config
         )
         .then(function (res) {
-          console.log(res);
+          // console.log(res);
           parser.parseString(res.data, function (err, result) {
             // console.log(result.API3G.Result[0]);
             if (result.API3G.Result[0] == "000") {

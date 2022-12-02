@@ -95,7 +95,7 @@ function ReserveTableModal() {
 <CompanyToken>342D7169-FD79-4159-87F8-77642BCF0D88</CompanyToken>
 <Request>createToken</Request>
 <Transaction>
-    <PaymentAmount>1</PaymentAmount>
+    <PaymentAmount>${amount}</PaymentAmount>
     <PaymentCurrency>ghs</PaymentCurrency>
     <RedirectURL>https://dikinisland.com/tableredirect</RedirectURL>
     <BackURL>https://dikinisland.com </BackURL>
