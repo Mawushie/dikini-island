@@ -10,7 +10,7 @@ function Redirect() {
   const navigate = useNavigate();
   const queryParams = new URLSearchParams(window.location.search);
   const TransactionToken = queryParams.get("TransactionToken");
-  console.log(TransactionToken);
+  // console.log(TransactionToken);
 
   useEffect(() => {
     const testdata = `
@@ -34,15 +34,15 @@ function Redirect() {
         config
       )
       .then(function (res) {
-        console.log(res);
+        // console.log(res);
         parser.parseString(res.data, function (err, result) {
           console.log(result);
           if (result.API3G.Result[0] == "000") {
-            console.log("yaaa");
+            // console.log("yaaa");
             const paystatus = result.API3G.ResultExplanation[0];
             const paymentamount = result.API3G.TransactionAmount[0];
-            console.log(paystatus);
-            console.log(paymentamount);
+            // console.log(paystatus);
+            // console.log(paymentamount);
             const firstname = localStorage.getItem("firstname");
             const lastname = localStorage.getItem("lastname");
             const useremail = localStorage.getItem("email");
@@ -50,7 +50,7 @@ function Redirect() {
             const data = {
               user: {
                 firstName: `${firstname}`,
-                lastLame: `${lastname}`,
+                lastName: `${lastname}`,
                 email: `${useremail}`,
               },
               order: {
@@ -58,7 +58,7 @@ function Redirect() {
                 amount: `${paymentamount}`,
               },
             };
-            console.log(data);
+            // console.log(data);
 
             axios
               .post(
@@ -66,10 +66,10 @@ function Redirect() {
                 data
               )
               .then(function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.status == 200) {
                   document.getElementById("confirmed").style.display = "block";
-                  localStorage.clear();
+                  // localStorage.clear();
                 }
               })
               .catch((err) => console.log(err));
@@ -89,7 +89,7 @@ function Redirect() {
         <div id="confirmed">
           {" "}
           <Div style={{ textAlign: "center" }}>
-            <h3 id="confirmed">Payment Confirmed.</h3>
+            <h3>Payment Confirmed.</h3>
             <h3>Please check your email for confirmation.</h3>
             <h3 className="mb-4">Thank You</h3>
 

@@ -114,22 +114,22 @@ function BuyTicketModal() {
           email: `${email}`,
         },
       };
-      console.log(data);
+      // console.log(data);
       axios
         .post("https://api-dikinisland.onrender.com/api/v1/female/rsvp", data)
         .then(function (res) {
-          console.log(res.data);
+          // console.log(res.data);
           // alert("RSVP CONFIRMED");
         })
         .catch((err) => console.log(err));
-      console.log(firstname, lastname, email);
+      // console.log(firstname, lastname, email);
     } else {
-      console.log("mmmmmm");
+      // console.log("mmmmmm");
       const data = `<API3G>
         <CompanyToken>342D7169-FD79-4159-87F8-77642BCF0D88</CompanyToken>
         <Request>createToken</Request>
         <Transaction>
-            <PaymentAmount>${amount}</PaymentAmount>
+            <PaymentAmount>1</PaymentAmount>
             <PaymentCurrency>ghs</PaymentCurrency>
             <RedirectURL>https://dikinisland.com/redirect</RedirectURL>
             <BackURL>https://www.dikinisland.com </BackURL>
@@ -140,7 +140,7 @@ function BuyTicketModal() {
         <Services>
           <Service>
             <ServiceType>63948</ServiceType>
-            <ServiceDescription>Test Product</ServiceDescription>
+            <ServiceDescription>Events</ServiceDescription>
             <ServiceDate>${dateFormat}</ServiceDate>
           </Service>
         </Services>
@@ -153,12 +153,17 @@ function BuyTicketModal() {
       };
       let parser = new xml2js.Parser();
       axios
-        .post("https://secure.3gdirectpay.com/API/v6/", data, config)
+        .post(
+          "https://api-dikinisland.onrender.com/api/v1/payment",
+          data,
+          config
+        )
         .then(function (res) {
+          console.log(res);
           parser.parseString(res.data, function (err, result) {
-            console.log(result.API3G.Result[0]);
+            // console.log(result.API3G.Result[0]);
             if (result.API3G.Result[0] == "000") {
-              console.log("yaaa");
+              // console.log("yaaa");
               window.open(
                 `  https://secure.3gdirectpay.com/pay.asp?ID=${result.API3G.TransToken[0]} `,
                 "_self"

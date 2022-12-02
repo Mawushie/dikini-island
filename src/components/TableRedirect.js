@@ -8,7 +8,7 @@ function TableRedirect() {
   const navigate = useNavigate();
   const queryParams = new URLSearchParams(window.location.search);
   const TransactionToken = queryParams.get("TransactionToken");
-  console.log(TransactionToken);
+  // console.log(TransactionToken);
 
   useEffect(() => {
     const testdata = `
@@ -32,15 +32,15 @@ function TableRedirect() {
         config
       )
       .then(function (res) {
-        console.log(res);
+        // console.log(res);
         parser.parseString(res.data, function (err, result) {
-          console.log(result);
+          // console.log(result);
           if (result.API3G.Result[0] == "000") {
-            console.log("yaaa");
+            // console.log("yaaa");
             const paystatus = result.API3G.ResultExplanation[0];
             const paymentamount = result.API3G.TransactionAmount[0];
-            console.log(paystatus);
-            console.log(paymentamount);
+            // console.log(paystatus);
+            // console.log(paymentamount);
             const firstname = localStorage.getItem("firstname");
             const lastname = localStorage.getItem("lastname");
             const useremail = localStorage.getItem("email");
@@ -48,7 +48,7 @@ function TableRedirect() {
             const data = {
               user: {
                 firstName: `${firstname}`,
-                lastLame: `${lastname}`,
+                lastName: `${lastname}`,
                 email: `${useremail}`,
                 table: `${table}`,
               },
@@ -57,7 +57,7 @@ function TableRedirect() {
                 amount: `${paymentamount}`,
               },
             };
-            console.log(data);
+            // console.log(data);
 
             axios
               .post(
@@ -65,7 +65,7 @@ function TableRedirect() {
                 data
               )
               .then(function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.status == 200) {
                   document.getElementById("confirmed").style.display = "block";
                   localStorage.clear();

@@ -91,12 +91,12 @@ function ReserveTableModal() {
       },
     };
 
-    const testdata = `<API3G>
-<CompanyToken>8D3DA73D-9D7F-4E09-96D4-3D44E7A83EA3</CompanyToken>
+    const data = `<API3G>
+<CompanyToken>342D7169-FD79-4159-87F8-77642BCF0D88</CompanyToken>
 <Request>createToken</Request>
 <Transaction>
-    <PaymentAmount>${amount}</PaymentAmount>
-    <PaymentCurrency>tzs</PaymentCurrency>
+    <PaymentAmount>1</PaymentAmount>
+    <PaymentCurrency>ghs</PaymentCurrency>
     <RedirectURL>https://dikinisland.com/tableredirect</RedirectURL>
     <BackURL>https://dikinisland.com </BackURL>
     <customerFirstName>${firstname}</customerFirstName>
@@ -105,19 +105,19 @@ function ReserveTableModal() {
 </Transaction>
 <Services>
   <Service>
-    <ServiceType>3854</ServiceType>
-    <ServiceDescription>Test Product</ServiceDescription>
+    <ServiceType>63948</ServiceType>
+    <ServiceDescription>Events</ServiceDescription>
     <ServiceDate>${dateFormat}</ServiceDate>
   </Service>
 </Services>
 </API3G>`;
 
-    console.log(testdata);
+    // console.log(data);
     let parser = new xml2js.Parser();
     axios
       .post(
-        "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
-        testdata,
+        "https://api-dikinisland.onrender.com/api/v1/payment",
+        data,
 
         {
           "Access-Control-Allow-Origin": "*",
@@ -129,7 +129,7 @@ function ReserveTableModal() {
         parser.parseString(res.data, function (err, result) {
           console.log(result.API3G.Result[0]);
           if (result.API3G.Result[0] == "000") {
-            console.log("yaaa");
+            // console.log("yaaa");
             window.open(
               ` https://secure.3gdirectpay.com/payv2.php?ID=${result.API3G.TransToken[0]} `,
               "_self"
@@ -140,7 +140,7 @@ function ReserveTableModal() {
       .catch((err) => console.log(err));
   }
   const handleReserve = () => {
-    console.log("table reserved");
+    // console.log("table reserved");
     const reserveData = {
       user: {
         firstName: firstname,
@@ -155,12 +155,12 @@ function ReserveTableModal() {
         reserveData
       )
       .then(function (res) {
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => console.log(err));
 
-    console.log("reserved");
-    console.log(reserveData);
+    // console.log("reserved");
+    // console.log(reserveData);
   };
 
   return (
@@ -260,20 +260,20 @@ function ReserveTableModal() {
               >
                 Reserve table
               </button>
-              <a
+              {/* <a
                 href="https://shop.directpay.online/paymybills/THEPLATINUMBAYHOTEL"
                 className="buyLink"
+              > */}
+              <button
+                type="button"
+                class="btn btnSecondary"
+                data-bs-toggle="modal"
+                data-bs-target="#loadingModal"
+                onClick={handleSubmit}
               >
-                <button
-                  type="button"
-                  class="btn btnSecondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loadingModal"
-                  // onClick={handleSubmit}
-                >
-                  {buttonText}
-                </button>
-              </a>
+                {buttonText}
+              </button>
+              {/* </a> */}
             </div>
           </div>
         </div>
