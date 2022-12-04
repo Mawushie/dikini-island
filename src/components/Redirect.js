@@ -29,7 +29,7 @@ function Redirect() {
     let parser = new xml2js.Parser();
     axios
       .post(
-        "https://cors-anywhere.herokuapp.com/https://secure.3gdirectpay.com/API/v6/",
+        "https://api-dikinisland.onrender.com/api/v1/payment",
         testdata,
         config
       )
@@ -41,21 +41,26 @@ function Redirect() {
             // console.log("yaaa");
             const paystatus = result.API3G.ResultExplanation[0];
             const paymentamount = result.API3G.TransactionAmount[0];
+            const mobileNo = result.API3G.CustomerPhone[0];
+
             // console.log(paystatus);
             // console.log(paymentamount);
             const firstname = localStorage.getItem("firstname");
             const lastname = localStorage.getItem("lastname");
             const useremail = localStorage.getItem("email");
-
+            const quantity = localStorage.getItem("quantity");
             const data = {
               user: {
                 firstName: `${firstname}`,
                 lastName: `${lastname}`,
                 email: `${useremail}`,
+                ticketType: `Regular`,
+                mobileNo: `${mobileNo}`,
               },
               order: {
                 status: `${paystatus}`,
                 amount: `${paymentamount}`,
+                quantity: `${quantity}`,
               },
             };
             // console.log(data);

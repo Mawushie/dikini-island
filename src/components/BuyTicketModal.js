@@ -102,6 +102,7 @@ function BuyTicketModal() {
     localStorage.setItem("firstname", `${firstname}`);
     localStorage.setItem("lastname", `${lastname}`);
     localStorage.setItem("email", `${email}`);
+    localStorage.setItem("quantity", `${quantity}`);
     const amount = quantity * 200;
     const dateFormat = Moment().format("YYYY/MM/DD HH:MM");
     const date = new Date();
@@ -112,13 +113,15 @@ function BuyTicketModal() {
           firstName: `${firstname}`,
           lastName: `${lastname}`,
           email: `${email}`,
+          ticketType: `RSVP`,
+          mobileNo: `${phone}`,
         },
       };
-      // console.log(data);
+      console.log(data);
       axios
         .post("https://api-dikinisland.onrender.com/api/v1/female/rsvp", data)
         .then(function (res) {
-          // console.log(res.data);
+          console.log(res.data);
           // alert("RSVP CONFIRMED");
         })
         .catch((err) => console.log(err));
@@ -136,6 +139,7 @@ function BuyTicketModal() {
             <customerFirstName>${firstname}</customerFirstName>
             <customerLastName>${lastname}</customerLastName>
             <customerEmail>${email}</customerEmail>
+<customerPhone>${phone}</customerPhone>
         </Transaction>
         <Services>
           <Service>

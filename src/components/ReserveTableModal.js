@@ -66,6 +66,7 @@ function ReserveTableModal() {
     localStorage.setItem("lastname", `${lastname}`);
     localStorage.setItem("email", `${email}`);
     localStorage.setItem("table", `${table}`);
+
     var amount;
     if (table == "Fiji (Cabana) GH¢ 20,000") {
       amount = "20000";
@@ -102,6 +103,7 @@ function ReserveTableModal() {
     <customerFirstName>${firstname}</customerFirstName>
     <customerLastName>${lastname}</customerLastName>
     <customerEmail>${email}</customerEmail>
+<customerPhone>${phone}</customerPhone>
 </Transaction>
 <Services>
   <Service>
@@ -144,18 +146,26 @@ function ReserveTableModal() {
     const reserveData = {
       user: {
         firstName: firstname,
-        lastname: lastname,
+        lastName: lastname,
         email: email,
+        mobileNo: `${phone}`,
+        ticketType: `Reserved`,
+      },
+      order: {
         table: table,
+        status: `Reserved`,
+        amount: `0`,
+        quantity: `0`,
       },
     };
+    console.log(reserveData);
     axios
       .post(
         "https://api-dikinisland.onrender.com/api/v1/table/reserve",
         reserveData
       )
       .then(function (res) {
-        // console.log(res.data);
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
 
