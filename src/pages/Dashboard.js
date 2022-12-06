@@ -20,7 +20,7 @@ function Dashboard() {
       axios
         .get("https://api-dikinisland.onrender.com/api/v1/count/rsvps")
         .then((res) => {
-          console.log(res.data.totalCount);
+          // console.log(res.data.totalCount);
           setRsvp(res.data.totalCount);
         });
     };
@@ -29,7 +29,7 @@ function Dashboard() {
       axios
         .get("https://api-dikinisland.onrender.com/api/v1/total/tickets")
         .then((res) => {
-          console.log(res.data.totalCount);
+          // console.log(res.data.totalCount);
           setTicketsBought(res.data.totalCount);
         });
     };
