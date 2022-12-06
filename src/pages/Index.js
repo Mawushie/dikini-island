@@ -190,7 +190,6 @@ function Index() {
                   />
                 </div>
                 <div id="ticket">
-                  {" "}
                   <button
                     className="btnSecondary headerbtn"
                     data-bs-toggle="modal"
@@ -268,22 +267,25 @@ function Index() {
       </div>
 
       <div className="description" id="about">
+        <div>{/* <img src="./images/descimage.png" /> */}</div>
         <div>
           <p className="details secret">Whatever Happens On The Island,</p>
           <p className="secret">Stays On The Island!</p>
+          <h3 id="city">THE CITY'S FINEST</h3>
           <p className="details mx-4">
             The Most Elite Beach, Pool & Indoor Parties Happening On The Hills
           </p>
           <p className="details mx-4">
-            Three Parties, One night ! The Possibilities Are ENDLESS
+            Three Parties, One night ! The Possibilities Are{" "}
+            <span>ENDLESS</span>
           </p>
           <p className="details mx-4">
-            See You On 17th December At The Platinum Bay Hotel
+            📅 17th December, 2022 2:00 PM 📍The Platinum Bay Hotel
           </p>
 
-          <p className="details mx-4">
+          {/* <p className="details mx-4">
             Remember, Whatever Happens On The Island, Stays On The Island
-          </p>
+          </p> */}
           <button
             className="btnSecondary"
             data-bs-toggle="modal"

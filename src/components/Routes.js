@@ -16,7 +16,7 @@ function AppRoutes() {
           <Route path="/redirect" element={<Redirect />} />
           <Route path="/tableredirect" element={<TableRedirect />} />
           <Route path="/confirmed" element={<PaymentCorfirmed />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="admin/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>
