@@ -59,7 +59,7 @@ const Container = styled.div`
   background: #ffffff;
   border: 2px solid #e6e6e6;
   border-radius: 16px;
-  height: 510px;
+  height: 515px;
 `;
 
 const Paragraph = styled.p`
