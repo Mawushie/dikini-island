@@ -2,10 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 function Table1() {
+  const disabled = () => {
+    const buttonDisabled = document.getElementsByClassName("table1");
+    console.log(buttonDisabled);
+    buttonDisabled.disabled = true;
+  };
   return (
     <div>
       <Container>
         <div>
+          {/* <span>SOLD OUT</span> */}
           <h4 className="mb-4">Fiji (Cabana) GH¢ 20,000</h4>
           <Paragraph>
             <img src="./images/ellipse.png" />
@@ -46,18 +52,22 @@ function Table1() {
           {" "}
           <ButtonDiv>
             <button
-              className="btnPrimary"
+              // disabled={true}
+              className="btnPrimary table1"
               id="reservelg"
-              data-bs-toggle="modal"
-              data-bs-target="#reserveModal"
+              // data-bs-toggle="modal"
+              // data-bs-target="#"
+              onClick={disabled}
             >
               Reserve a table
             </button>
 
             <button
-              className="btnSecondary"
-              data-bs-toggle="modal"
-              data-bs-target="#reserveModal"
+              // disabled={true}
+              className="btnSecondary table1"
+              // data-bs-toggle="modal"
+              // data-bs-target="#"
+              onClick={disabled}
             >
               Buy a table
             </button>
