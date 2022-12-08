@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Table1() {
   const disabled = () => {
     const buttonDisabled = document.getElementsByClassName("table1");
-    console.log(buttonDisabled);
+    // console.log(buttonDisabled);
     buttonDisabled.disabled = true;
   };
   return (
