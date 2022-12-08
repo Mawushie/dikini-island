@@ -18,7 +18,7 @@ function ReserveTableModal() {
     quantity: "",
   });
   const option = [
-    { value: "Fiji (Cabana) GH¢ 20,000", label: "Fiji (Cabana) GH¢ 20,000" },
+    // { value: "Fiji (Cabana) GH¢ 20,000", label: "Fiji (Cabana) GH¢ 20,000" },
     { value: "Aruba (Cabana) GH¢ 12,000", label: "Aruba (Cabana) GH¢ 12,000" },
     {
       value: "Bora Bora (Long Table) GH¢ 6,000",
