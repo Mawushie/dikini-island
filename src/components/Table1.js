@@ -52,6 +52,8 @@ function Table1() {
           {" "}
           <ButtonDiv>
             <button
+              disabled
+              type="button"
               // disabled={true}
               className="btnPrimary table1"
               id="reservelg"
@@ -63,11 +65,13 @@ function Table1() {
             </button>
 
             <button
+              disabled
               // disabled={true}
               className="btnSecondary table1"
               // data-bs-toggle="modal"
               // data-bs-target="#"
               onClick={disabled}
+              type="button"
             >
               Buy a table
             </button>

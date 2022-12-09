@@ -471,3 +471,20 @@ option {
         height: 100vh;
     }
 }
+
+// #reservelg {
+//     @include buttonStyles(#eea3c3,
+//     #ec3683,
+//     #ec3683);
+//     &:hover {
+//         background-color: transparent;
+//     }
+// }
+.table1 {
+    @include buttonStyles(#eea3c3,
+    #ffffff,
+    transparent);
+    // &:hover {
+    //     background-color: #ec3683;
+    // }
+}
